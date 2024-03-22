@@ -1,0 +1,66 @@
+header {
+    top: 198px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: white;
+    width: 100%;
+    font-family: RijksoverheidSansWebText;
+}
+
+
+.accordion {
+    background-color: #F3F3F3;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    font-family: RijksoverheidSansWebText;
+}
+
+.accordion-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.accordion-text-block {
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    font-family: RijksoverheidSansWebText;
+    font-weight: 400;
+    line-height: 22px;
+    word-wrap: break-word;
+}
+
+.accordion-label {
+    text-align: left;
+    color: #007BC7;
+    font-size: 16px;
+    font-family: RijksoverheidSansWebText;
+    font-weight: 400;
+    word-wrap: break-word;
+    background-color: #F3F3F3;
+    padding: 10px 0 10px 0;
+    margin: 0 0 0 0;
+}
+
+.toggle-visibility-btn {
+    float: right;
+    color: #007BC7;
+    font-size: 20px;
+    background-color: #F3F3F3;
+    font-weight: 400;
+    padding: 0 0 0 0;
+    margin: 40% 5px 40% 10px;
+
+}
+
+.table-row {
+    border-style: solid none none none;
+    border-top-color: #007BC7;
+    border-width: thin;
+}
+
+.hover-table-help {
+    cursor: pointer;
+}

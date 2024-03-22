@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+    <h1>{% block title %}Veelgestelde vragen{% endblock %}</h1>
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/help.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="accordion">
+        <table class="accordion-table">
+            {% for entry in json_data %}
+                <tbody class="hover-table-help">
+                <tr class="table-row">
+                    <td class="accordion-label">
+                        {{ entry["question"] }}
+                    </td>
+                    <td class="toggle-visibility-btn">
+                    </td>
+                </tr>
+                <tr class="accordion-text-block">
+                    <td colspan="2">
+                        {{ entry["info"] | safe }}
+                    </td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

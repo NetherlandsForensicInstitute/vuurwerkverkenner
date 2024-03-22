@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="image/x-icon"
+          href="{{ url_for('static', filename='icons/favicon.ico') }}"
+          sizes="any">
+    <link rel="icon" type="image/svg+xml"
+          href="{{ url_for('static', filename='icons/favicon.svg') }}">
+    {% block links %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/help.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</head>
+<body class="text-center">
+<header>
+    {% block header %}{% endblock %}
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>

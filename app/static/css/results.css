@@ -1,0 +1,178 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 2px;
+    background: #42145F;
+}
+
+.pagination {
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: RijksoverheidSansWebText;
+    justify-content: center;
+    color: black;
+}
+
+.pagination-page-info {
+    padding: .6em;
+    margin-left: 0;
+    font-size: 18px;
+    background: #f3f3f3;
+    font-family: RijksoverheidSansWebText;
+}
+
+.pagination-page-info b {
+    background: #f3f3f3;
+    padding: .1em .25em;
+    font-size: 100%;
+    color: #007BC7;
+}
+
+.page-item { /* Necessary for the "..." object in the links */
+    color: #007BC7;
+    padding: 6px 6px;
+    text-decoration: none; /* Remove underline from pagination links */
+}
+
+.pagination li {
+    display: inline-block; /* Display list items horizontally */
+    background: white;
+}
+
+.pagination a {
+    color: #007BC7;
+    background-color: white;
+    text-decoration: none;
+}
+
+.pagination .active a { /* Change settings of the active pagination link */
+    color: white;
+    background-color: #42145F;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.horizontal-line {
+    height: 3px; /* Set the height of the line */
+    background-color: #42145F;
+    margin: 10px 0 -4px; /* Set margins to control spacing around the line */
+    z-index: 1;
+    position: relative;
+}
+
+.accordion-meta-data {
+    background-color: #F3F3F3;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    font-family: RijksoverheidSansWebText;
+}
+
+.grey-wrapper-meta-data {
+    background: #F3F3F3;
+    padding: 6px 16px;
+    margin: 5px 5px 10px;
+}
+
+.results-container {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.results-container a {
+    font-weight: normal;
+    margin: 5px 0 5px 0;
+    cursor: pointer;
+}
+
+.results-container img {
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+    cursor: pointer;
+}
+
+.view-lower {
+    border-style: none none solid none;
+    width: 100%;
+    border-width: thin;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-meta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.meta-data-text {
+    font-size: 12px;
+    font-family: RijksoverheidSansWebText;
+}
+
+.meta-data-tbl {
+    font-size: 12px;
+    font-family: RijksoverheidSansWebText;
+}
+
+.meta-data-td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.results-headers {
+    font-family: RijksoverheidSansWebText;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.results-arrow {
+    font-family: RijksoverheidSansWebText;
+    font-size: 20px;
+    cursor: pointer;
+    color: #007BC7;
+}
+
+.toggle-content {
+    display: none;
+}
+
+.accordion-content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Optional styles for better appearance */
+.accordion-header {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: background-color 0.2s ease-out;
+}
+
+.accordion-header:hover {
+    background-color: #ccc;
+}
+
+.accordion-header.active {
+    background-color: #ccc;
+}

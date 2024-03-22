@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block links %}
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/results.css') }}">
+{% endblock %}
+
+{% block header %}
+    <h1>{% block title %}Resultaten{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    {% if errors %}
+        {% for error in errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+    {% else %}
+        {{ pagination.info }}
+        {% for result in results %}
+            <div class="grey-wrapper">
+                {% if result.meta['n_items'] == 1 %}
+                    <img src="{{ url_for('results.show_image', filename=result.meta['wrapper_image']) }}"
+                         alt="Etiket"
+                         onclick="getItemData({{ result.label }}, {{ 0 }}, 'results')"
+                         width="100%" height="auto">
+                {% else %}
+                    <img src="{{ url_for('results.show_image', filename=result.meta['wrapper_image']) }}"
+                         alt="Etiket"
+                         onclick="getGroupData('{{ result.label }}', '{{ 1 }}')"
+                         width="100%" height="auto">
+                {% endif %}
+                {% if result.meta['n_items'] == 1 %}
+                    <div class="view-lower" onclick="getItemData({{ result.label }}, {{ 0 }}, 'results')">
+                        {#  skip the item_group_view and go directly to viewing meta-info #}
+                        <a class="results-headers">
+                            {% if result.meta.article_name %}
+                                Bekijk {{ result.meta.article_name }}
+                            {% else %}
+                                <span class="placeholder">Bekijk artikel</span>
+                            {% endif %}
+                        </a>
+                        <a class="results-arrow"> > </a>
+                    </div>
+                {% else %}
+                    <div class="view-lower" onclick="getGroupData('{{ result.label }}', '{{ 1 }}')">
+                        <a class="results-headers">
+                            Bekijk categorie ({{ result.meta['n_items'] }}
+                            artikelen)
+                        </a>
+                        <a class="results-arrow"> > </a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {{ navigation_links }}
+    {% endif %}
+{% endblock %}
