@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app, render_template, send_from_directory
+from flask import Blueprint, current_app, render_template, send_file, send_from_directory
 
 from app.blueprints.login import verify_authorization
 
@@ -16,5 +16,12 @@ def show():
 
 
 @index_page.route('/.well-known/security.txt', methods=['GET'])
+@verify_authorization
 def security():
     return send_from_directory('.well-known/', 'security.txt')
+
+
+@index_page.route('/favicon.ico')
+@verify_authorization
+def favicon():
+    return send_file('static/icons/favicon.ico', mimetype="image/x-icon")
