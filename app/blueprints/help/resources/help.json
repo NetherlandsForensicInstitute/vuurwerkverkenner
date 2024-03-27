@@ -45,7 +45,7 @@
   },
   {
     "question": "Hoe kan ik contact opnemen met het Nederlands Forensisch Instituut bij onverwachte resultaten of andere vragen?",
-    "info": "Het Nederlands Forensisch Instituut heeft de Vuurwerkverkenner ontwikkeld en onderhoudt deze. Bij vragen of suggesties kun je <a href=\"https://www.forensischinstituut.nl/contact-2\">contact</a> opnemen met het team Explosies en Explosieven van het NFI. Vermeld bij specifieke vragen over resultaten het versienummer van het algoritme en de database (zie hieronder)."
+    "info": "Het Nederlands Forensisch Instituut heeft de Vuurwerkverkenner ontwikkeld en onderhoudt deze. Bij vragen of suggesties kun je mailen naar <a href=\"mailto:vuurwerkverkenner@nfi.nl\">vuurwerkverkenner@nfi.nl</a>. Vermeld bij specifieke vragen over resultaten het versienummer van het algoritme en de database (zie hieronder)."
   },
   {
     "question": "Open source en versienummers",
