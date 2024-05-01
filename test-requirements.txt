@@ -1,6 +1,6 @@
 pytest==7.4.4
 flask==3.0.0
-pillow==10.2.0
+pillow==10.3.0
 confidence==0.15
 Flask-Session==0.5.0
 flask-paginate==2023.10.24
