@@ -1,0 +1,128 @@
+[project]
+name = "vuurwerkverkenner-app"
+version = "2.0.0"
+description = """Frontend application for the vuurwerkverkenner to classify which firework wrapper matches best with
+ an uploaded firework snippet"""
+authors = [
+    { name = "Netherlands Forensic Institute - CFS R&D Data", email = "cfs_rd_data@nfi.nl" },
+]
+dependencies = [
+    "confidence~=0.16",
+    "flask~=3.1.1",
+    "flask-paginate~=2024.4.12",
+    "Flask-Session~=0.8.0",
+    "gunicorn~=23.0.0",
+    "lru-dict~=1.3.0",
+    "pillow~=11.3.0",
+    "Unidecode~=1.4.0",
+    "scipy~=1.14.1",
+    "validators~=0.35.0",
+    "torch~=2.7.1",
+    "transformers~=4.52.4",
+    "Flask-Babel~=4.0.0",
+    "huggingface-hub~=0.34.3",
+    "pydantic~=2.11.7",
+    "speaklater>=1.3",
+]
+requires-python = "~=3.12"
+readme = "README.md"
+classifiers = [
+    'Development Status :: 4 - Beta', # or other development status see https://pypi.org/classifiers/
+    'Environment :: Console',
+    'Operating System :: MacOS :: MacOS X',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Programming Language :: Python :: 3.12',
+    'License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)'
+]
+
+[dependency-groups]
+dev = [
+    "pytest~=8.3.2",
+    "ruff~=0.11.2",
+    "pytest-mock~=3.14.0",
+    "tox>=4.25.0",
+]
+
+[tool.tox]
+env_list = ["py312"]
+skipsdist = true
+
+[tool.tox.env_run_base]
+passenv = ["PDM_PYPI_PASSWORD", "PDM_PYPI_USERNAME"]
+allowlist_externals = ['pytest']
+groups = ["dev"]
+description = "Run test under {base_python}"
+commands = [
+    ["pytest", "tests/"]]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+# Ignore everything for notebooks
+exclude = [
+    "*.ipynb"
+]
+
+[tool.ruff.format]
+quote-style = "preserve"
+
+[tool.ruff.lint]
+select = [
+    "I", # isort
+    "NPY", # numpy specific rules
+    "UP", # pyupgrade
+    "D", # pydocstyle
+    "N", # pep8-naming
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "PL", # pylint
+    "S",  # flake8-bandit
+    "PT",  # flake8-pytest-style
+]
+ignore = [
+    'D200',  # One-line docstring should fit on one line
+    'D103',  # Missing docstring in public function
+    'D102',  # Missing docstring in public method
+    'D107',  # Missing docstring in `__init__`
+    'D100',  # no module docstring required at top of each file
+    'D101',  # no class docstring required (only in __init__)
+    'D205',  # no blank line between summary and description of docstring required (we omit the summary often)
+    'D104',  # no docstring in __init__.py of public package required
+    'D105',  # no docstring in magic methods (like __eq__) required, since they are not class dependent
+    'D212',  # no specific distinction between summary and description of a docstring (we omit the summary often)
+    'N803',  # no restrictions on naming conventions and having uppercase variable names
+    'N806',  # no restrictions on having uppercase argument names in a function
+    'PLR0913',  # no restriction on having 5 or fewer arguments in a function
+    'PLE0604',  # no restriction on having only strings in __all__ definitions
+    'PLR2004',  # not restriction on using magic values (unspecified) as used a lot in the tests
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"  # docstring type to use
+ignore-decorators = ["property"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = [
+    "S101",  # Exclude the 'use of assert' warning in the test files
+    "D103",  # No docstring necessary for tests
+    "PT011",  # No `match` parameter necessary for pytest.raises
+]
+
+[tool.ruff.lint.flake8-pytest-style]
+parametrize-names-type = "csv"  # allows the string style of pytest.mark.parametrize feature names
+
+[tool.pdm]
+distribution = false
+
+[[tool.pdm.source]]
+type = "index"
+url = "https://download.pytorch.org/whl/cpu/"
+name = "torch"
+include_packages = ['torch']
+
+[[tool.pdm.source]]
+name = "pypi"
+url = "https://repo.nfi.minjus.nl/repository/pip-group/simple"
+exclude_packages = ['torch']

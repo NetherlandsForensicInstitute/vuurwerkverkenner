@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block links %}
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/results.css') }}">
+{% endblock %}
+{% block content %}
+    <button class="secondary-button" id="back-to-category-button" onclick="goBackFromArticle();">
+        <span class="secondary-button-text">{{ _('Terug') }}</span>
+    </button>
+    {% if errors %}
+        {% for error in errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+    {% else %}
+        <div class="grey-wrapper">
+            <h1>{{ _('Etiket (klik om te zoomen)')}}</h1>
+            <a href="{{ url_for('results.show_image', filename=article['image']) }}"
+               target="_blank">
+                <img src="{{ url_for('results.show_image', filename=article['image']) }}"
+                     alt="Etiket"
+                     width="100%"
+                     height="auto">
+            </a>
+        </div>
+        <div class="grey-wrapper-meta-data">
+            <div class="accordion-meta-data">
+                <div class="view-meta" onclick="toggleMeta(this);">
+                    <p class="results-headers">{{ _('Meer info')}}</p>
+                    <p class="results-arrow toggle-meta">﹀</p>
+                </div>
+                <div class="toggle-content">
+                    <table class="meta-data-tbl">
+                        {% for key, value in article.items() %}
+                            {% if key in meta_data_key_mapping and value != "" %}
+                                <tr>
+                                    <td class="meta-data-td">
+                                        {{ meta_data_key_mapping[key] }}
+                                    </td>
+                                    <td class="meta-data-td">
+                                        {% if key == "mass_burst_charge" %}
+                                            {{ value | float | round(2) }}
+                                        {% elif key == "endangerment" %}
+                                            {% if value in endangerment_mapping %}
+                                                <a href="{{ endangerment_mapping[value] }}" target="_blank">
+                                                    {{ _('Bekijk vakbijlage')}}</a>
+                                            {% else %}
+                                        {{ _('Onbekend') }}
+                                            {% endif %}
+                                        {% else %}
+                                            {{ value|translate_meta_data_values }}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </table>
+                    {% if article['mass_other_mixtures']['I'] != "" %}
+                        <br>
+                        <p class="meta-data-text">{{ _('Overige lading')}}:</p>
+                        <table class="meta-data-tbl">
+                            <tr>
+                                <td class="meta-data-td">{{ _('Samenstelling') }}</td>
+                                <td class="meta-data-td">{{ _('Massa (g)') }}</td>
+                            </tr>
+                            {% for composition, mass in article['composition_other_mixtures'].values() | zip(article['mass_other_mixtures'].values()) %}
+                                {% if mass != "" %}
+                                    <tr>
+                                        <td class="meta-data-td">{{ composition|translate_meta_data_values }}</td>
+                                        <td class="meta-data-td">{{ mass | float | round(2) }}</td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% if article['meta_images']|length > 0 %}
+            <div class="grey-wrapper-meta-data">
+                <div class="accordion-meta-data">
+                    <div class="view-meta" onclick="toggleMeta(this);">
+                        <p class="results-headers">{{ _("Meer foto's") }}</p>
+                        <p class="results-arrow toggle-meta">﹀</p>
+                    </div>
+                    <div class="toggle-content" id="meta-fotos">
+                        {% for meta_image in article['meta_images'] %}
+                            <a href="{{ url_for('results.show_image', filename=meta_image) }}"
+                               target="_blank">
+                                <img src="{{ url_for('results.show_image', filename=meta_image) }}"
+                                     alt="Meta_image"
+                                     width="100%"
+                                     height="auto">
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

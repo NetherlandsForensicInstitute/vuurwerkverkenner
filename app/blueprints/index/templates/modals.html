@@ -1,0 +1,109 @@
+<!-- ALERT MODALS -->
+
+<div id="no-photo-text-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('no-photo-text-modal');">&times;</span>
+        <p>
+            <b>{{ _('Geen foto of text ingevoerd')}}</b><br>
+{{ _('Voer een foto en/of tekst in')}}
+        </p>
+    </div>
+</div>
+
+<div id="wrong-file-format-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('wrong-file-format-modal');">&times;</span>
+        <p>
+            <b>{{ _('Bestandstype niet ondersteund')}}</b><br>
+{{ _('Het gekozen bestandstype wordt niet ondersteund. Toegestane bestandstypes zijn: {allowed_extensions}').format(
+    allowed_extensions=allowed_extensions|join(', ')) }}
+        </p>
+    </div>
+</div>
+
+<div id="wrong-file-size-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('wrong-file-size-modal');">&times;</span>
+        <p>
+            <b>{{ _('Bestand te groot')}}</b><br>
+{{ _('Het gekozen bestand is te groot. Kies een bestand van maximaal {max_size} MB.').format(
+    max_size=(max_upload_size / 1e6)|round) }}
+        </p>
+    </div>
+</div>
+
+<!-- INFORMATIVE MODALS -->
+
+<div id="image-selector-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('image-selector-modal');">&times;</span>
+        <p>
+            <b>{{ _('Upload snipperfoto')}}</b><br>
+{{ _('Klik op de camera om een foto te uploaden. Upload een foto van alle snippers met een (stukje) etiket.
+Fotografeer de snippers recht van boven, op een effen, lichte achtergrond.
+Gebruik hiervoor bijvoorbeeld een wit papier of een DNA-deken. Zorg ook voor een goede belichting.
+Let erop dat er naast de snippers geen andere voorwerpen op de foto staan (dus ook geen liniaal).')}}
+        </p>
+    </div>
+</div>
+
+<div id="text-input-modal" class="modal">
+    <div class="modal-content">
+        <span class="close"
+              onclick="closeModal('text-input-modal');">&times;</span>
+        <p>
+            <b>{{ _('Voer tekst in')}}</b><br>
+{{ _('Voer hier de leesbare tekst op de snippers in. Dit mogen ook (meerdere) delen van woorden zijn.
+Zorg dat de losse tekstfragmenten met spaties van elkaar gescheiden zijn.
+Het tekstfilter is niet hoofdlettergevoelig en gebruikt alleen het Latijns alfabet om mee te zoeken.
+Cijfers worden optioneel meegenomen.')}}
+        </p>
+    </div>
+</div>
+
+<div id="text-filter-info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close"
+              onclick="closeModal('text-filter-info-modal');">&times;</span>
+        <p>
+            <b>{{ _('Tekstfilter inschakelen')}}</b><br>
+{{ _('Door deze optie aan te zetten, zal de tekst in het invoerveld gebruikt worden voor het zoeken naar
+            vuurwerketiketten. Alleen etiketten die de ingevoerde tekst bevatten, zullen dan getoond
+            worden in de zoekresultaten. Standaard staat deze optie aan.')}}
+        </p>
+    </div>
+</div>
+
+
+<div id="text-filter-digits-info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close"
+              onclick="closeModal('text-filter-digits-info-modal');">&times;</span>
+        <p>
+            <b>{{ _('Cijfers in Zoeken opnemen')}}</b><br>
+{{ _('Als je deze optie inschakelt, worden cijfers ook meegenomen bij het zoeken naar vuurwerketiketten, mits ze in het
+            invoerveld staan. Standaard is deze optie uitgeschakeld.')}}
+        </p>
+    </div>
+</div>
+
+
+<div id="disclaimer-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('disclaimer-modal');">&times;</span>
+        <p>
+            <b>{{ _('Disclaimer') }}</b><br>
+{{ _('Deze website is ontwikkeld door het Nederlands Forensisch Instituut (NFI) en is een hulpmiddel
+om een indicatie te krijgen van welk professioneel vuurwerkartikel ontploft is,
+welke onderdelen dit vuurwerk bevat en hoe gevaarlijk de explosie van dit vuurwerkartikel is.
+Gevonden vuurwerkartikelen kunnen fout zijn. Resultaten dienen niet beschouwd te worden als NFI-rapport
+of deskundigenoordeel en zijn niet als zodanig bruikbaar in de rechtsgang.
+Gebruik van de resultaten en overige informatie op deze website is geheel op eigen risico.
+Het NFI is op geen enkele wijze aansprakelijk voor geleden schade of letsel door het gebruik
+van deze website.') }}
+        </p>
+        <p>
+{{ _('Deze website gebruikt een functionele cookie om uw taalvoorkeur bij te houden.') }}
+        </p>
+    </div>
+</div>

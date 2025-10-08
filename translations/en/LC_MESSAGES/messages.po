@@ -1,0 +1,1511 @@
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-10-01 14:56+0200\n"
+"PO-Revision-Date: 2025-08-04 14:43+0200\n"
+"Last-Translator: \n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/blueprints/help/resources/help.py:9
+msgid "Waar kan ik de Vuurwerkverkenner voor gebruiken?"
+msgstr "What can I use the Fireworks explorer for?"
+
+#: app/blueprints/help/resources/help.py:11
+msgid ""
+"De Vuurwerkverkenner is een hulpmiddel dat gebruikt kan worden voor het "
+"herkennen van professioneel knalvuurwerk in forensisch onderzoek, en is "
+"ontwikkeld door het Nederlands Forensisch Instituut (NFI). De "
+"Vuurwerkverkenner kun je dus niet gebruiken voor het terugvinden van "
+"consumentenvuurwerk. Wanneer je een foto van gevonden snippers uploadt "
+"en/of tekst op de snippers invult, helpt de Vuurwerkverkenner met het "
+"vinden van gelijkende etiketten. Je krijgt etiketten uit een database te "
+"zien, op volgorde van gelijkenis volgens de Vuurwerkverkenner. Als de "
+"ingevoerde tekst niet voorkomt op een etiket, wordt het weggefilterd uit "
+"de resultaten. De Vuurwerkverkenner geeft dus suggesties die je zelf nog "
+"moet controleren. Door op een etiket te klikken, krijg je meer informatie"
+" over het artikel, zoals een indicatie voor de gevaarzetting. Let op: "
+"iedere situatie met vuurwerk is uniek, dus de gevaarzetting is niet meer "
+"dan een indicatie. De Vuurwerkverkenner kan een NFI-rapport niet "
+"vervangen."
+msgstr ""
+"The Fireworks explorer is a tool that can be used to identify "
+"professional fireworks in forensic investigations, and has been developed"
+" by the Netherlands Forensic Institute (NFI). Hence, the Fireworks "
+"Explorer cannot be used to locate consumer fireworks. When you upload a "
+"photo of found snippets and/or enter text found on the snippets, the "
+"Fireworks Explorer assists in finding similar labels. You will see labels"
+" from a database, ordered by similarity according to the Fireworks "
+"explorer. If the entered text does not appear on a label, it is filtered "
+"out of the results. The Fireworks explorer thus provides suggestions that"
+" you need to verify yourself. By clicking on a label, you get more "
+"information about the item, such as an indication of the hazard level. "
+"Please note: every situation with fireworks is unique, so the hazard "
+"level is only an indication. The Fireworks Explorer cannot replace an NFI"
+" report."
+
+#: app/blueprints/help/resources/help.py:25
+msgid "Waar kan ik de Vuurwerkverkenner niet voor gebruiken?"
+msgstr "What can't I use the Fireworks Explorer for?"
+
+#: app/blueprints/help/resources/help.py:27
+msgid ""
+"De Vuurwerkverkenner werkt niet met snippers (of tekst) van "
+"consumentenvuurwerk. Als het vuurwerk niet voorkomt in de database, kan "
+"het dus niet gevonden worden. De suggesties van de Vuurwerkverkenner moet"
+" je altijd zelf controleren. De Vuurwerkverkenner kan een NFI-rapport "
+"niet vervangen."
+msgstr ""
+"The Fireworks explorer does not work with snippets (or text) from "
+"consumer fireworks. If the fireworks are not present in the database, "
+"they cannot be found. You must always verify the suggestions made by the "
+"Fireworks explorer yourself. The Fireworks explorer cannot replace an NFI"
+" report."
+
+#: app/blueprints/help/resources/help.py:34
+msgid "Hoe werkt de Vuurwerkverkenner?"
+msgstr "How does the Fireworks explorer work?"
+
+#: app/blueprints/help/resources/help.py:36
+msgid ""
+"Voor het bepalen van de mate van gelijkenis van de foto met de etiketten "
+"wordt een AI-model gebruikt. De Vuurwerkverkenner kan hiermee, in "
+"vergelijking met een mens, snel de etiketten sorteren op volgorde van "
+"gelijkenis. Echter, de Vuurwerkverkenner is minder goed in het zien van "
+"gelijkenis en verschillen dan een mens. Het is dus aan de gebruiker om na"
+" te gaan of de getoonde etiketten goede suggesties zijn. Naast een foto "
+"kan tekst worden ingevoerd. Als de ingevoerde tekst niet voorkomt op een "
+"etiket, wordt het weggefilterd uit de resultaten."
+msgstr ""
+"An AI model is used to determine the degree of similarity between the "
+"photo and the labels. The Fireworks Explorer can sort the labels in order"
+" of similarity more quickly than a human. However, the Fireworks Explorer"
+" is less capable than a human at perceiving similarities and differences."
+" It is therefore up to the user to verify whether the displayed labels "
+"are good suggestions. In addition to a photo, text may be insterted. If "
+"the entered text does not appear on a label, that label is filtered out "
+"of the results."
+
+#: app/blueprints/help/resources/help.py:45
+msgid "Hoe maak ik een goede foto?"
+msgstr "How do I take a good photo?"
+
+#: app/blueprints/help/resources/help.py:47
+msgid ""
+"Hoe beter de foto, hoe groter de kans op succes. Verzamel zoveel mogelijk"
+" snippers en zet die samen op &eacute;&eacute;n foto. Maak de foto recht "
+"van boven en bij voorkeur in landschapsmodus (niet portretmodus). Het "
+"model kan minder goed omgaan met donkere foto's, of met niet-effen "
+"achtergronden. Gebruik daarom dus zoveel mogelijk een effen, en bij "
+"voorkeur lichte achtergrond. Zorg voor een goede belichting. Laat de "
+"snippers weg die geen stuk van het etiket bevatten. Laat andere objecten "
+"dan snippers weg (gebruik ook geen liniaal)."
+msgstr ""
+"The better the photo, the greater the chance of success. Gather as many "
+"snippets as possible and place them together in one photo. Take the photo"
+" directly from above and preferably in landscape mode (not portrait "
+"mode). The model struggles with dark photos or non-uniform backgrounds. "
+"Therefore, use a background that is as uniform and light as possible. "
+"Ensure good lighting. Exclude fragments that do not contain a piece of "
+"the label. Don't include other objects besides snippets in the photo "
+"either (such as measuring tapes)."
+
+#: app/blueprints/help/resources/help.py:56
+msgid "Hoe werkt het tekstfilter?"
+msgstr "How does the text filter work?"
+
+#: app/blueprints/help/resources/help.py:58
+msgid ""
+"Als er nog tekst te lezen is op een van de snippers van het ontplofte "
+"vuurwerk, dan kun je deze meegeven aan de Vuurwerkverkenner. De "
+"Vuurwerkverkenner gebruikt deze tekst om etiketten te selecteren waar "
+"dezelfde tekst op staat. Het invullen van deze tekst kan dus erg helpen "
+"om het juiste type vuurwerk te vinden. Ook delen van woorden mogen worden"
+" ingevoerd. De Vuurwerkverkenner let hierbij alleen op 'kale tekst', dus "
+"niet op (Romeinse) cijfers, accenten, leestekens en dergelijke. Ook kijkt"
+" de Vuurwerkverkenner alleen naar het Latijnse alfabet (dus niet naar "
+"bijvoorbeeld Cyrillische tekens). Het tekstfilter is niet "
+"hoofdlettergevoelig. Omdat de Vuurwerkverkenner etiketten wegfiltert waar"
+" de ingevoerde tekst niet op staat, moet je goed opletten dat je geen "
+"overschrijffouten maakt, want het tekstfilter kijkt alleen naar exacte "
+"overeenkomsten. Bij twijfel kun je de tekst beter niet invoeren."
+msgstr ""
+"If there is any text readable on one of the snippets from the exploded "
+"fireworks, you can provide it to the Fireworks explorer. The Fireworks "
+"explorer uses this text to select labels that contain the same text. "
+"Entering this text can greatly help in finding the correct type of "
+"fireworks. Parts of words can also be entered. The Fireworks explorer "
+"pays attention only to 'plain text', meaning not to (Roman) numerals, "
+"accents, punctuation marks, and the like. Additionally, the Fireworks "
+"explorer only considers the Latin alphabet (not Cyrillic characters, for "
+"example). The text filter is not case-sensitive. Since the Fireworks "
+"explorer filters out labels where the entered text does not appear, you "
+"must be careful not to make typos, as the text filter only looks for "
+"exact matches. If in doubt, it is better not to enter the text."
+
+#: app/blueprints/help/resources/help.py:71
+msgid "Vindt de Vuurwerkverkenner altijd het juiste vuurwerk?"
+msgstr "Does the Fireworks explorer always return the correct type of fireworks?"
+
+#: app/blueprints/help/resources/help.py:73
+msgid ""
+"Het korte antwoord is: nee. De Vuurwerkverkenner doet suggesties, maar "
+"deze kloppen niet altijd. Wanneer een snipper afkomstig is van een etiket"
+" dat niet in de database is opgenomen, zal de Vuurwerkverkenner verkeerde"
+" etiketten als suggestie geven. Het kan ook gebeuren dat de "
+"Vuurwerkverkenner vindt dat een ander etiket beter bij de snippers past "
+"dan het etiket waar de snippers echt vanaf komen. Het is aan de gebruiker"
+" om na te gaan of de Vuurwerkverkenner goede suggesties heeft gedaan. Wel"
+" is het zo dat hoe beter de foto, hoe groter de kans op succes is. De "
+"Vuurwerkverkenner is slechts een hulpmiddel; het menselijk oordeel is "
+"leidend."
+msgstr ""
+"The short answer is: no. The Fireworks explorer makes suggestions, but "
+"these are not always accurate. If a snippet comes from a label that is "
+"not included in the database, the Fireworks explorer will suggest "
+"incorrect labels. It can also happen that the Fireworks explorer finds "
+"that a different label fits the snippets better than the label they "
+"actually come from. It is up to the user to verify whether the Fireworks "
+"explorer has made good suggestions. However, it is true that the better "
+"the photo, the greater the chance of success. The Fireworks explorer is "
+"just a tool; human judgment is paramount."
+
+#: app/blueprints/help/resources/help.py:83
+msgid "Hoe zijn de resultaten gesorteerd?"
+msgstr "How are the results ordered?"
+
+#: app/blueprints/help/resources/help.py:85
+msgid ""
+"De resultaten zijn gesorteerd op basis van gelijkenis tussen de snippers "
+"op de ingevoerde foto en de etiketten in de database. De mate van "
+"gelijkenis wordt bepaald door een AI-model dat speciaal hiervoor gebouwd "
+"is. Daarnaast zijn de resultaten gefilterd op basis van overeenkomst "
+"tussen de ingevoerde tekst en de teksten die op de etiketten staan. Als "
+"de resultaten bepaald zijn, krijg je per pagina 5 etiketten te zien. Van "
+"sommige soorten vuurwerk zijn er meerdere varianten, die erg op elkaar "
+"lijken. Deze voegen we samen tot een 'categorie'. In zo'n geval wordt een"
+" willekeurig etiket van de categorie getoond. Je kan dan op het etiket "
+"klikken om alle varianten van deze categorie vuurwerk te zien."
+msgstr ""
+"The results are sorted based on the similarity between the snippets in "
+"the uploaded photo and the labels in the database. The degree of "
+"similarity is determined by an AI model built specifically for this "
+"purpose. Additionally, the results are filtered based on the match "
+"between the entered text and the texts on the labels. Once the results "
+"are determined, you will see 5 labels per page. Some types of fireworks "
+"have multiple variants that are very similar to each other. These are "
+"grouped into a 'category'. In such cases, a random label from the "
+"category is displayed. You can then click on the label to see all "
+"variants of this category of fireworks."
+
+#: app/blueprints/help/resources/help.py:95
+msgid "Waarom zie ik geen resultaten?"
+msgstr "Why don't I get any search results?"
+
+#: app/blueprints/help/resources/help.py:97
+msgid ""
+"Om resultaten te zien zijn twee dingen nodig:<br>1. Upload een foto en/of"
+" voer tekst in die je op de snippers ziet.<br>2. Druk op de knop 'Verken "
+"vuurwerk'. De resultaten worden gefilterd op basis van de ingevoerde "
+"tekst. Het kan zijn dat de ingevoerde tekst op geen enkel etiket in de "
+"database staat waar de Vuurwerkverkenner gebruik van maakt. Als er na het"
+" uploaden van de foto en tekst nog steeds geen resultaten verschijnen, "
+"probeer het dan nog eens met minder of helemaal zonder tekst."
+msgstr ""
+"To see results, two things are required: <br>1. Upload a photo and/or "
+"enter text you see on the snippets.<br>2. Press the 'Explore fireworks' "
+"button. The results are filtered based on the entered text. It might "
+"happen that the entered text doesn't appear on any label in the database "
+"used by the Fireworks explorer. If no results appear after uploading the "
+"photo and text, try again with less text or with no text at all."
+
+#: app/blueprints/help/resources/help.py:105
+msgid "Kan ik de resultaten gebruiken als bewijsmateriaal in een strafzaak?"
+msgstr "Can I use the results as evidence in a criminal case?"
+
+#: app/blueprints/help/resources/help.py:107
+msgid ""
+"Nee. De Vuurwerkverkenner kan niet een NFI rapport vervangen en kan ook "
+"niet gebruikt worden als bewijsmateriaal in een strafzaak."
+msgstr ""
+"No. The Fireworks explorer cannot replace an NFI report and cannot be "
+"used as evidence in a criminal case."
+
+#: app/blueprints/help/resources/help.py:112
+msgid "Hoe zit de Vuurwerkverkenner technisch in elkaar?"
+msgstr "How is the Fireworks explorer technically structured?"
+
+#: app/blueprints/help/resources/help.py:114
+msgid ""
+"De Vuurwerkverkenner maakt gebruik van een AI-model. Dit model heeft "
+"'geleerd' om het meest gelijkende etiket te vinden bij een foto van "
+"snippers van afgestoken vuurwerk. Dit doen we door het model combinaties "
+"van snippers van afgestoken vuurwerk en snippers van een willekeurig "
+"etiket te tonen, waarbij het voor de ontwikkelaars bekend was of de "
+"snippers en het etiket van hetzelfde vuurwerk komen. Het model kan "
+"berekenen in hoeverre de snippers en een etiket van hetzelfde vuurwerk "
+"afkomstig zijn. Als het model er sterk naast zat, dan is het model "
+"bijgesteld zodat het steeds beter wordt in het vergelijken van snippers "
+"met etiketten."
+msgstr ""
+"The fireworks explorer uses an AI model. This model has 'learned' to find"
+" the most similar label to a photo of snippets from exploded fireworks. "
+"We do this by showing the model combinations of snippets of exploded "
+"fireworks and snippets from a random label, where the developers knew if "
+"the snippets and label came from the same fireworks. The model can "
+"calculate the extent to which the snippets and a label originate from the"
+" same fireworks. If the model was far off, it was adjusted so that it "
+"gradually becomes better at comparing snippets with labels."
+
+#: app/blueprints/help/resources/help.py:124
+msgid "Worden mijn gegevens opgeslagen?"
+msgstr "Is my data saved?"
+
+#: app/blueprints/help/resources/help.py:126
+msgid ""
+"Nee. De ingevoerde foto en/of tekst wordt eenmalig gebruikt om resultaten"
+" te vinden wanneer op 'Verken vuurwerk' wordt gedrukt, en wordt verder "
+"niet opgeslagen. Ook andere gegevens, zoals IP-adressen, worden niet "
+"bijgehouden."
+msgstr ""
+"No. The uploaded photo and/or text is used once to find results when "
+"'Explore fireworks' is clicked, but is not stored after that. Other data,"
+" such as IP addresses, are also not tracked or saved."
+
+#: app/blueprints/help/resources/help.py:133
+msgid ""
+"Hoe kan ik contact opnemen met het Nederlands Forensisch Instituut bij "
+"onverwachte resultaten of andere vragen?"
+msgstr ""
+"How can I contact the Netherlands Forensic Institute in case of "
+"unexpected results or other questions?"
+
+#: app/blueprints/help/resources/help.py:137
+msgid ""
+"Het Nederlands Forensisch Instituut heeft de Vuurwerkverkenner ontwikkeld"
+" en onderhoudt deze. Bij vragen of suggesties kun je mailen naar <a "
+"href=\"mailto:vuurwerkverkenner@nfi.nl\">vuurwerkverkenner@nfi.nl</a>. "
+"Vermeld bij specifieke vragen over resultaten het versienummer van het "
+"algoritme en de database (zie hieronder)."
+msgstr ""
+"The Netherlands Forensic Institute developed and maintains the Fireworks "
+"explorer. For questions or suggestions, you can email <a "
+"href=\"mailto:vuurwerkverkenner@nfi.nl\">vuurwerkverkenner@nfi.nl</a>. "
+"For specific questions about results, please include the version number "
+"of the algorithm and the database (see below)."
+
+#: app/blueprints/help/resources/help.py:144
+msgid "Open source en versienummers"
+msgstr "Open source and version numbers"
+
+#: app/blueprints/help/resources/help.py:146
+#, python-brace-format
+msgid ""
+"De code van deze applicatie kun je vinden op <a "
+"href=\"https://github.com/netherlandsForensicInstitute/vuurwerkverkenner\""
+" target=\"_blank\">GitHub</a>. Het getrainde deep-learning algoritme kun "
+"je vinden op <a "
+"href=\"https://huggingface.co/NetherlandsForensicInstitute/vuurwerkverkenner\""
+" target=\"_blank\">HuggingFace</a>, met daarbij een technische "
+"toelichting over de architectuur, het trainingsproces en de evaluatie. De"
+" database die de applicatie gebruikt, kun je ook vinden op <a "
+"href=\"https://huggingface.co/datasets/NetherlandsForensicInstitute"
+"/vuurwerkverkenner-data\" target=\"_blank\">HuggingFace</a>. De huidige "
+"versie van het algoritme heeft commit hash (versienummer) "
+"{commit_hash_model}. De huidige versie van de database heeft commit hash "
+"(versienummer) {commit_hash_data}."
+msgstr ""
+"The code for this application can be found on <a "
+"href=\"https://github.com/netherlandsForensicInstitute/vuurwerkverkenner\""
+" target=\"_blank\">GitHub</a>. The trained deep-learning algorithm can be"
+" found on <a "
+"href=\"https://huggingface.co/NetherlandsForensicInstitute/vuurwerkverkenner\""
+" target=\"_blank\">HuggingFace</a>, along with a technical explanation of"
+" the architecture, the training process, and the evaluation. The database"
+" used by the application can also be found on <a "
+"href=\"https://huggingface.co/datasets/NetherlandsForensicInstitute"
+"/vuurwerkverkenner-data\" target=\"_blank\">HuggingFace</a>. The current "
+"version of the algorithm has commit hash (version number) "
+"{commit_hash_model}. The current version of the database has commit hash "
+"(version number) {commit_hash_data}."
+
+#: app/blueprints/help/resources/help.py:162
+msgid "Gebruikt deze site cookies?"
+msgstr "Does this website use cookies?"
+
+#: app/blueprints/help/resources/help.py:163
+#: app/blueprints/index/templates/modals.html:106
+msgid ""
+"Deze website gebruikt een functionele cookie om uw taalvoorkeur bij te "
+"houden."
+msgstr "This website uses a functional cookie to save your language preference."
+
+#: app/blueprints/help/templates/help.html:5
+msgid "Veelgestelde vragen"
+msgstr "Frequently asked questions"
+
+#: app/blueprints/index/templates/index.html:3 app/templates/topbar.html:20
+#: app/templates/topbar.html:26
+msgid "Vuurwerkverkenner"
+msgstr "Fireworks explorer"
+
+#: app/blueprints/index/templates/index.html:25
+msgid "Upload snippers"
+msgstr "Upload snippets"
+
+#: app/blueprints/index/templates/index.html:28
+msgid "Geüploade foto"
+msgstr "Uploaded photo"
+
+#: app/blueprints/index/templates/index.html:41
+msgid "Geen foto ingevoerd"
+msgstr "No photo uploaded"
+
+#: app/blueprints/index/templates/index.html:56
+msgid "Maak of selecteer foto"
+msgstr "Take or select a photo"
+
+#: app/blueprints/index/templates/index.html:63
+#: app/blueprints/index/templates/modals.html:55
+msgid "Voer tekst in"
+msgstr "Enter text"
+
+#: app/blueprints/index/templates/index.html:66
+msgid "Ingevoerde tekst"
+msgstr "Entered text"
+
+#: app/blueprints/index/templates/index.html:78
+msgid "Tekst op de snippers, met spaties ertussen"
+msgstr "Text on the snippets, with spaces"
+
+#: app/blueprints/index/templates/index.html:83
+msgid "Geen tekst ingevoerd"
+msgstr "No text entered"
+
+#: app/blueprints/index/templates/index.html:87
+msgid "Tekstfilteropties"
+msgstr "Text filter options"
+
+#: app/blueprints/index/templates/index.html:95
+#: app/blueprints/index/templates/modals.html:69
+msgid "Tekstfilter inschakelen"
+msgstr "Enable Text Filter"
+
+#: app/blueprints/index/templates/index.html:106
+#: app/blueprints/index/templates/modals.html:83
+msgid "Cijfers in Zoeken opnemen"
+msgstr "Include Numbers in Search"
+
+#: app/blueprints/index/templates/index.html:125
+msgid "Verken vuurwerk"
+msgstr "Explore fireworks"
+
+#: app/blueprints/index/templates/index.html:132
+msgid "Zoek nieuw vuurwerk"
+msgstr "Find new fireworks"
+
+#: app/blueprints/index/templates/index.html:136
+msgid "Pas zoekopdracht aan"
+msgstr "Adjust search"
+
+#: app/blueprints/index/templates/index.html:149
+#: app/blueprints/index/templates/modals.html:95
+msgid "Disclaimer"
+msgstr "Disclaimer"
+
+#: app/blueprints/index/templates/modals.html:7
+msgid "Geen foto of text ingevoerd"
+msgstr "No photo uploaded or text entered"
+
+#: app/blueprints/index/templates/modals.html:8
+msgid "Voer een foto en/of tekst in"
+msgstr "Upload a photo or enter text"
+
+#: app/blueprints/index/templates/modals.html:17
+msgid "Bestandstype niet ondersteund"
+msgstr "File type not supported"
+
+#: app/blueprints/index/templates/modals.html:18
+#, python-brace-format
+msgid ""
+"Het gekozen bestandstype wordt niet ondersteund. Toegestane bestandstypes"
+" zijn: {allowed_extensions}"
+msgstr ""
+"The uploaded file type is not supported. Supported file types are: "
+"{allowed_extensions}"
+
+#: app/blueprints/index/templates/modals.html:28
+msgid "Bestand te groot"
+msgstr "File too large"
+
+#: app/blueprints/index/templates/modals.html:29
+#, python-brace-format
+msgid ""
+"Het gekozen bestand is te groot. Kies een bestand van maximaal {max_size}"
+" MB."
+msgstr ""
+"The uploaded file is too large. Pick a file with a maximum size of "
+"{max_size} MB."
+
+#: app/blueprints/index/templates/modals.html:41
+msgid "Upload snipperfoto"
+msgstr "Upload snippet photo"
+
+#: app/blueprints/index/templates/modals.html:42
+msgid ""
+"Klik op de camera om een foto te uploaden. Upload een foto van alle "
+"snippers met een (stukje) etiket.\n"
+"Fotografeer de snippers recht van boven, op een effen, lichte "
+"achtergrond.\n"
+"Gebruik hiervoor bijvoorbeeld een wit papier of een DNA-deken. Zorg ook "
+"voor een goede belichting.\n"
+"Let erop dat er naast de snippers geen andere voorwerpen op de foto staan"
+" (dus ook geen liniaal)."
+msgstr ""
+"Click on the camera to upload a picture. Upload a photo of all snippets "
+"that have a (piece) of the fireworks label on them. Put the snippets on a"
+" plain and light background, such as a white paper or  DNA blanket, and "
+"photograph them from straight above. Make sure you have good lighting. "
+"Ensure that there are no other objects than the snippets in the photo "
+"(such as measurement tape)."
+
+#: app/blueprints/index/templates/modals.html:56
+msgid ""
+"Voer hier de leesbare tekst op de snippers in. Dit mogen ook (meerdere) "
+"delen van woorden zijn.\n"
+"Zorg dat de losse tekstfragmenten met spaties van elkaar gescheiden zijn."
+"\n"
+"Het tekstfilter is niet hoofdlettergevoelig en gebruikt alleen het "
+"Latijns alfabet om mee te zoeken.\n"
+"Cijfers worden optioneel meegenomen."
+msgstr ""
+"Enter eligible text of the snippets. This may be (multiple) parts of "
+"words. Ensure that individual text fragments are separated by spaces. The"
+" text filter is not case sensitive and only uses the Latin alphabet for "
+"searches. Optionally, digits may be included in the filter."
+
+#: app/blueprints/index/templates/modals.html:70
+msgid ""
+"Door deze optie aan te zetten, zal de tekst in het invoerveld gebruikt "
+"worden voor het zoeken naar\n"
+"            vuurwerketiketten. Alleen etiketten die de ingevoerde tekst "
+"bevatten, zullen dan getoond\n"
+"            worden in de zoekresultaten. Standaard staat deze optie aan."
+msgstr ""
+"Enabling this option will include the text displayed in the input text "
+"field in the search for fireworks labels. The results will be strictly "
+"filtered if the text appears in the pre-annotated texts of the fireworks "
+"labels. This option is enabled by default."
+
+#: app/blueprints/index/templates/modals.html:84
+msgid ""
+"Als je deze optie inschakelt, worden cijfers ook meegenomen bij het "
+"zoeken naar vuurwerketiketten, mits ze in het\n"
+"            invoerveld staan. Standaard is deze optie uitgeschakeld."
+msgstr ""
+"Enabling this option will also include numbers in the search for "
+"fireworks labels if they are present at the input text field. This option"
+" is disabled by default."
+
+#: app/blueprints/index/templates/modals.html:96
+msgid ""
+"Deze website is ontwikkeld door het Nederlands Forensisch Instituut (NFI)"
+" en is een hulpmiddel\n"
+"om een indicatie te krijgen van welk professioneel vuurwerkartikel "
+"ontploft is,\n"
+"welke onderdelen dit vuurwerk bevat en hoe gevaarlijk de explosie van dit"
+" vuurwerkartikel is.\n"
+"Gevonden vuurwerkartikelen kunnen fout zijn. Resultaten dienen niet "
+"beschouwd te worden als NFI-rapport\n"
+"of deskundigenoordeel en zijn niet als zodanig bruikbaar in de "
+"rechtsgang.\n"
+"Gebruik van de resultaten en overige informatie op deze website is geheel"
+" op eigen risico.\n"
+"Het NFI is op geen enkele wijze aansprakelijk voor geleden schade of "
+"letsel door het gebruik\n"
+"van deze website."
+msgstr ""
+"This website is developed by the Netherlands Forensic Institue (NFI) and "
+"is an aid to get an indication of which professional fireworks product "
+"has exploded, which parts it contains and how dangerous the explosion of "
+"the product is. The returned fireworks products may be incorrect. Results"
+" should not be considerd an NFI-report or expert's judgement and as such "
+"are not admissible in court. Use of the search results and any other "
+"information on this website is at your own risk. The NFI is in no way "
+"liable for any damage or injury suffered as a result of using this "
+"website."
+
+#: app/blueprints/results/results.py:115
+msgid "resultaten"
+msgstr "results"
+
+#: app/blueprints/results/results.py:116 app/blueprints/results/results.py:182
+#, python-brace-format
+msgid "<b>{start} - {end}</b> van <b>{total}</b> {record_name}"
+msgstr "<b>{start} - {end}</b> of <b>{total}</b> {record_name}"
+
+#: app/blueprints/results/results.py:181
+msgid "artikelen in categorie"
+msgstr "articles in category"
+
+#: app/blueprints/results/templates/article.html:9
+msgid "Terug"
+msgstr "Back"
+
+#: app/blueprints/results/templates/article.html:17
+msgid "Etiket (klik om te zoomen)"
+msgstr "Label (click to zoom in)"
+
+#: app/blueprints/results/templates/article.html:29
+msgid "Meer info"
+msgstr "More info"
+
+#: app/blueprints/results/templates/article.html:46
+msgid "Bekijk vakbijlage"
+msgstr "View factsheet"
+
+#: app/blueprints/results/templates/article.html:48
+msgid "Onbekend"
+msgstr "Unknown"
+
+#: app/blueprints/results/templates/article.html:60
+msgid "Overige lading"
+msgstr "Other charge"
+
+#: app/blueprints/results/templates/article.html:63
+msgid "Samenstelling"
+msgstr "Composition"
+
+#: app/blueprints/results/templates/article.html:64
+msgid "Massa (g)"
+msgstr "Mass (g)"
+
+#: app/blueprints/results/templates/article.html:84
+msgid "Meer foto's"
+msgstr "More photos"
+
+#: app/blueprints/results/templates/category.html:9
+msgid "Categorie (van gelijkende artikelen)"
+msgstr "Category (of similar articles)"
+
+#: app/blueprints/results/templates/category.html:13
+msgid "Terug naar zoekresultaten"
+msgstr "Back to search results"
+
+#: app/blueprints/results/templates/category.html:29
+#: app/blueprints/results/templates/results.html:37
+msgid "Bekijk"
+msgstr "View"
+
+#: app/blueprints/results/templates/category.html:31
+#: app/blueprints/results/templates/results.html:39
+msgid "Bekijk artikel"
+msgstr "View article"
+
+#: app/blueprints/results/templates/results.html:9
+msgid "Resultaten"
+msgstr "Results"
+
+#: app/blueprints/results/templates/results.html:23
+#: app/blueprints/results/templates/results.html:28
+msgid "Etiket"
+msgstr "Label"
+
+#: app/blueprints/results/templates/results.html:47
+msgid "Bekijk categorie"
+msgstr "View category"
+
+#: app/blueprints/results/templates/results.html:48
+msgid "artikelen"
+msgstr "articles"
+
+#: app/requests/messages.py:3
+msgid "Formvelden ontbreken"
+msgstr "Form fields are missing"
+
+#: app/requests/messages.py:4
+msgid "Foto ontbreekt"
+msgstr "Photo is missing"
+
+#: app/requests/messages.py:5
+msgid "Geen foto of tekst ingevoerd"
+msgstr "No photo uploaded or text entered"
+
+#: app/requests/messages.py:6
+msgid "Paginanummer ontbreekt"
+msgstr "Page number is missing"
+
+#: app/requests/messages.py:7
+msgid "Paginanummer is geen getal"
+msgstr "Page number is not numeric"
+
+#: app/requests/messages.py:8
+msgid "ID van resultaten ontbreekt"
+msgstr "Result ID is missing"
+
+#: app/requests/messages.py:9
+msgid "Categorie ontbreekt"
+msgstr "Category is missing"
+
+#: app/requests/messages.py:10
+msgid "Categorie bestaat niet"
+msgstr "Category does not exist"
+
+#: app/requests/messages.py:11
+msgid "Label ontbreekt"
+msgstr "Label is missing"
+
+#: app/requests/messages.py:12
+msgid "Label bestaat niet"
+msgstr "Label does not exist"
+
+#: app/requests/messages.py:13
+msgid "Leeg bestand"
+msgstr "Empty file"
+
+#: app/requests/messages.py:14
+msgid "Bestandsformaat is ongeldig"
+msgstr "File format is invalid"
+
+#: app/requests/messages.py:15
+msgid "Bestand inlezen niet gelukt"
+msgstr "Unable to read file"
+
+#: app/requests/messages.py:16
+msgid "Resultaten niet (meer) beschikbaar, verken opnieuw"
+msgstr "Results are (no longer) available, search again"
+
+#: app/requests/messages.py:17
+msgid "Geen resultaten beschikbaar voor dit paginanummer"
+msgstr "No results available for this page number"
+
+#: app/requests/messages.py:18
+msgid "Geen resultaten gevonden in de database. Klopt de ingevoerde tekst?"
+msgstr "No results found in the database. Is the entered text correct?"
+
+#: app/requests/messages.py:19
+msgid "Teveel tekens in ingevoerde tekst"
+msgstr "Too many characters in entered text"
+
+#: app/templates/base.html:7
+msgid ""
+"De Vuurwerkverkenner is ontwikkeld door het Nederlands Forensisch "
+"Instituut (NFI) en is een hulpmiddel\n"
+"            om een indicatie te krijgen van welk professioneel "
+"vuurwerkartikel ontploft is,\n"
+"            welke onderdelen dit vuurwerk bevat en hoe gevaarlijk de "
+"explosie van dit vuurwerkartikel is."
+msgstr ""
+"The Fireworks explorer is developed by the Netherlands Forensic Institute"
+" (NFI) and is an aid to get an indication of which professional fireworks"
+" product has exploded, which parts it contains and how dangerous the "
+"explosion of the product is."
+
+#: app/templates/topbar.html:32
+msgid "Home"
+msgstr "Home"
+
+#: app/templates/topbar.html:34 app/templates/topbar.html:41
+msgid "Zoekresultaten"
+msgstr "Search results"
+
+#: app/templates/topbar.html:36 app/templates/topbar.html:42
+msgid "Categorie"
+msgstr "Category"
+
+#: app/templates/topbar.html:43
+msgid "Artikel"
+msgstr "Article"
+
+#: config/render/endangerment_mapping.py:5
+msgid ""
+"/static/fact_sheets_nl/Vakbijlage Gevaarzetting Super Cobra 6 en "
+"vergelijkbare artikelen v2-22032024.pdf"
+msgstr "/static/fact_sheets_en/Factsheet Danger assessment Super COBRA 6_DEF.pdf"
+
+#: config/render/endangerment_mapping.py:8
+msgid ""
+"/static/fact_sheets_nl/Vakbijlage Gevaarzetting Cobra 8 en vergelijkbare "
+"artikelen v2-05112024 .pdf"
+msgstr "/static/fact_sheets_en/Factsheet Danger assessment COBRA 8_DEF.pdf"
+
+#: config/render/endangerment_mapping.py:10
+msgid ""
+"/static/fact_sheets_nl/Vakbijlage Gevaarzetting signaalraketten "
+"v1-23042024.pdf"
+msgstr "/static/fact_sheets_en/Factsheet Danger assessment Salute Rockets_DEF.pdf"
+
+#: config/render/endangerment_mapping.py:11
+msgid "/static/fact_sheets_nl/Vakbijlage Gevaarzetting shells v1-22032024.pdf"
+msgstr "/static/fact_sheets_en/Factsheet Danger assessment of shells_DEF.pdf"
+
+#: config/render/endangerment_mapping.py:12
+msgid "/static/fact_sheets_nl/Vakbijlage Gevaarzetting nitraten v1-02042024.pdf"
+msgstr ""
+"/static/fact_sheets_en/Factsheet Danger assessment of Flash Bangers up to"
+" 5 grams_DEF.pdf"
+
+#: config/render/meta_data_mapping.py:4
+msgid "Naam"
+msgstr "Name"
+
+#: config/render/meta_data_mapping.py:5
+msgid "Vuurwerktype"
+msgstr "Type of fireworks"
+
+#: config/render/meta_data_mapping.py:6
+msgid "Vuurwerkcategorie"
+msgstr "Category"
+
+#: config/render/meta_data_mapping.py:7
+msgid "Gevaarzetting"
+msgstr "Endangerment"
+
+#: config/render/meta_data_mapping.py:8
+msgid "Lengte van de koker (cm)"
+msgstr "Length of the tube (cm)"
+
+#: config/render/meta_data_mapping.py:9
+msgid "Diameter van de koker (cm)"
+msgstr "Diameter of the tube (cm)"
+
+#: config/render/meta_data_mapping.py:10
+msgid "Samenstelling hoofdlading"
+msgstr "Composition main charge"
+
+#: config/render/meta_data_mapping.py:11
+msgid "Massa hoofdlading (g)"
+msgstr "Mass main charge (g)"
+
+#: config/render/meta_data_mapping.py:15
+msgid "vuurpijl met knallading"
+msgstr "salute rocket"
+
+#: config/render/meta_data_mapping.py:16
+msgid "rasta-traat"
+msgstr "rasta-trate"
+
+#: config/render/meta_data_mapping.py:17
+msgid "cobra-traat"
+msgstr "cobra-trate"
+
+#: config/render/meta_data_mapping.py:21
+msgid "achtige"
+msgstr "like"
+
+#: config/render/meta_data_mapping.py:22
+msgid "andere"
+msgstr "other"
+
+#: config/render/meta_data_mapping.py:23
+msgid "anthraceendion"
+msgstr "anthracenedione"
+
+#: config/render/meta_data_mapping.py:24
+msgid "alfalactose"
+msgstr "alfa-lactose"
+
+#: config/render/meta_data_mapping.py:25
+msgid "alifatische"
+msgstr "aliphatic"
+
+#: config/render/meta_data_mapping.py:26
+msgid "aluminium"
+msgstr "aluminum"
+
+#: config/render/meta_data_mapping.py:27
+msgid "aluminiumpoeder"
+msgstr "aluminum powder"
+
+#: config/render/meta_data_mapping.py:28
+msgid "aluminiumtitaan"
+msgstr "aluminum titanium"
+
+#: config/render/meta_data_mapping.py:29
+msgid "ballen"
+msgstr "balls"
+
+#: config/render/meta_data_mapping.py:30
+msgid "balletjes"
+msgstr "little balls"
+
+#: config/render/meta_data_mapping.py:31
+msgid "bariumcarbonaat"
+msgstr "barium carbonate"
+
+#: config/render/meta_data_mapping.py:32
+msgid "bariumnitraat"
+msgstr "barium nitrate"
+
+#: config/render/meta_data_mapping.py:33
+msgid "bariumoxide"
+msgstr "barium oxide"
+
+#: config/render/meta_data_mapping.py:34
+msgid "batterij"
+msgstr "battery"
+
+#: config/render/meta_data_mapping.py:35
+msgid "beige"
+msgstr "beige"
+
+#: config/render/meta_data_mapping.py:36
+msgid "bekend"
+msgstr "known"
+
+#: config/render/meta_data_mapping.py:37
+msgid "blauw"
+msgstr "blue"
+
+#: config/render/meta_data_mapping.py:38
+msgid "blauwe"
+msgstr "blue"
+
+#: config/render/meta_data_mapping.py:39
+msgid "blok"
+msgstr "block"
+
+#: config/render/meta_data_mapping.py:40
+msgid "blue"
+msgstr "blue"
+
+#: config/render/meta_data_mapping.py:41
+msgid "bollen"
+msgstr "balls"
+
+#: config/render/meta_data_mapping.py:42
+msgid "bolletjes"
+msgstr "little balls"
+
+#: config/render/meta_data_mapping.py:43
+msgid "bom"
+msgstr "bomb"
+
+#: config/render/meta_data_mapping.py:44
+msgid "boomhars"
+msgstr "tree resin"
+
+#: config/render/meta_data_mapping.py:45
+msgid "brok"
+msgstr "chunk"
+
+#: config/render/meta_data_mapping.py:46
+msgid "brokjes"
+msgstr "little chunks"
+
+#: config/render/meta_data_mapping.py:47
+msgid "brokken"
+msgstr "chunks"
+
+#: config/render/meta_data_mapping.py:48
+msgid "bruin"
+msgstr "brown"
+
+#: config/render/meta_data_mapping.py:49
+msgid "calciet"
+msgstr "calcite"
+
+#: config/render/meta_data_mapping.py:50
+msgid "calciumcarbonaat"
+msgstr "calcium carbonate"
+
+#: config/render/meta_data_mapping.py:51
+msgid "calciummagnesiumcarbonaat"
+msgstr "calcium magnesium carbonate"
+
+#: config/render/meta_data_mapping.py:52
+msgid "cellulose"
+msgstr "cellulose"
+
+#: config/render/meta_data_mapping.py:53
+msgid "cementkleurig"
+msgstr "cement colored"
+
+#: config/render/meta_data_mapping.py:54
+msgid "chloorverbinding"
+msgstr "chlorine compound"
+
+#: config/render/meta_data_mapping.py:55
+msgid "coating"
+msgstr "coating"
+
+#: config/render/meta_data_mapping.py:56
+msgid "compartiment"
+msgstr "compartment"
+
+#: config/render/meta_data_mapping.py:57
+msgid "dolomiet"
+msgstr "dolomite"
+
+#: config/render/meta_data_mapping.py:58
+msgid "donkerbruin"
+msgstr "dark brown"
+
+#: config/render/meta_data_mapping.py:59
+msgid "donkergrijs"
+msgstr "dark grey"
+
+#: config/render/meta_data_mapping.py:60
+msgid "donkergrijze"
+msgstr "dark grey"
+
+#: config/render/meta_data_mapping.py:61
+msgid "dop"
+msgstr "cap"
+
+#: config/render/meta_data_mapping.py:62
+msgid "een"
+msgstr "a"
+
+#: config/render/meta_data_mapping.py:63
+msgid "en"
+msgstr "and"
+
+#: config/render/meta_data_mapping.py:64
+msgid "fijn"
+msgstr "fine"
+
+#: config/render/meta_data_mapping.py:65
+msgid "flakes"
+msgstr "flakes"
+
+#: config/render/meta_data_mapping.py:66
+msgid "flitspoeder"
+msgstr "flash powder"
+
+#: config/render/meta_data_mapping.py:67
+msgid "geidentificeerde"
+msgstr "identified"
+
+#: config/render/meta_data_mapping.py:68
+msgid "gele"
+msgstr "yellow"
+
+#: config/render/meta_data_mapping.py:69
+msgid "geel"
+msgstr "yellow"
+
+#: config/render/meta_data_mapping.py:70
+msgid "gemêleerd"
+msgstr "mixed"
+
+#: config/render/meta_data_mapping.py:71
+msgid "geperst"
+msgstr "pressed"
+
+#: config/render/meta_data_mapping.py:72
+msgid "geringe"
+msgstr "minor"
+
+#: config/render/meta_data_mapping.py:73
+msgid "gespecificeerd"
+msgstr "specified"
+
+#: config/render/meta_data_mapping.py:74
+msgid "glitters"
+msgstr "glitter"
+
+#: config/render/meta_data_mapping.py:75
+msgid "grijs"
+msgstr "grey"
+
+#: config/render/meta_data_mapping.py:76
+msgid "grijsbruine"
+msgstr "gray-brown"
+
+#: config/render/meta_data_mapping.py:77
+msgid "grijze"
+msgstr "grey"
+
+#: config/render/meta_data_mapping.py:78
+msgid "grote"
+msgstr "big"
+
+#: config/render/meta_data_mapping.py:79
+msgid "hard"
+msgstr "solid"
+
+#: config/render/meta_data_mapping.py:80
+msgid "harde"
+msgstr "solid"
+
+#: config/render/meta_data_mapping.py:81
+msgid "hoeveelheid"
+msgstr "quantity"
+
+#: config/render/meta_data_mapping.py:82
+msgid "houtzaagsel"
+msgstr "sawdust"
+
+#: config/render/meta_data_mapping.py:83
+msgid "kaf"
+msgstr "chaff"
+
+#: config/render/meta_data_mapping.py:84
+msgid "kaliumbenzoaat"
+msgstr "potassium benzoate"
+
+#: config/render/meta_data_mapping.py:85
+msgid "kaliumchloraat"
+msgstr "potassium chlorate"
+
+#: config/render/meta_data_mapping.py:86
+msgid "kaliumnitraat"
+msgstr "potassium nitrate"
+
+#: config/render/meta_data_mapping.py:87
+msgid "kaliumperchloraat"
+msgstr "potassium perchlorate"
+
+#: config/render/meta_data_mapping.py:88
+msgid "kaliumwaterstoftereftalaat"
+msgstr "potassium hydrogen terephthalate"
+
+#: config/render/meta_data_mapping.py:89
+msgid "ketens"
+msgstr "chains"
+
+#: config/render/meta_data_mapping.py:90
+msgid "kleine"
+msgstr "small"
+
+#: config/render/meta_data_mapping.py:91
+msgid "kleuren"
+msgstr "colors"
+
+#: config/render/meta_data_mapping.py:92
+msgid "koker"
+msgstr "tube"
+
+#: config/render/meta_data_mapping.py:93
+msgid "kokertjes"
+msgstr "little tubes"
+
+#: config/render/meta_data_mapping.py:94
+msgid "koolstof"
+msgstr "carbon"
+
+#: config/render/meta_data_mapping.py:95
+msgid "koolwaterstof"
+msgstr "hydrocarbon"
+
+#: config/render/meta_data_mapping.py:96
+msgid "koperdioxide"
+msgstr "copper dioxide"
+
+#: config/render/meta_data_mapping.py:97
+msgid "koperftalocyanine"
+msgstr "copper phthalocyanine"
+
+#: config/render/meta_data_mapping.py:98
+msgid "koperiioxide"
+msgstr "copper (II) oxide"
+
+#: config/render/meta_data_mapping.py:99
+msgid "koperioxide"
+msgstr "copper (I) oxide"
+
+#: config/render/meta_data_mapping.py:100
+msgid "koperoxide"
+msgstr "copper oxide"
+
+#: config/render/meta_data_mapping.py:101
+msgid "korrels"
+msgstr "granules"
+
+#: config/render/meta_data_mapping.py:102
+msgid "kwarts"
+msgstr "quartz"
+
+#: config/render/meta_data_mapping.py:103
+msgid "laag"
+msgstr "low"
+
+#: config/render/meta_data_mapping.py:104
+msgid "lading"
+msgstr "charge"
+
+#: config/render/meta_data_mapping.py:105
+msgid "lange"
+msgstr "long"
+
+#: config/render/meta_data_mapping.py:106
+msgid "lawinepijl"
+msgstr "salute rocket"
+
+#: config/render/meta_data_mapping.py:107
+msgid "lichtbruin"
+msgstr "light brown"
+
+#: config/render/meta_data_mapping.py:108
+msgid "lichtbruine"
+msgstr "light brown"
+
+#: config/render/meta_data_mapping.py:109
+msgid "lichtgrijze"
+msgstr "light grey"
+
+#: config/render/meta_data_mapping.py:110
+msgid "lont"
+msgstr "fuse"
+
+#: config/render/meta_data_mapping.py:111
+msgid "loodoxide"
+msgstr "lead oxide"
+
+#: config/render/meta_data_mapping.py:112
+msgid "magnalium"
+msgstr "magnalium"
+
+#: config/render/meta_data_mapping.py:113
+msgid "magnesium"
+msgstr "magnesium"
+
+#: config/render/meta_data_mapping.py:114
+msgid "magnesiumcarbonaat"
+msgstr "magnesium carbonate"
+
+#: config/render/meta_data_mapping.py:115
+msgid "magnesiumchloridehydroxide"
+msgstr "magnesium chloride hydroxide"
+
+#: config/render/meta_data_mapping.py:116
+msgid "magnesiumhydroxide"
+msgstr "magnesium hydroxide"
+
+#: config/render/meta_data_mapping.py:117
+msgid "magnesiumoxide"
+msgstr "magnesium oxide"
+
+#: config/render/meta_data_mapping.py:118
+msgid "magnesiumsilicaat"
+msgstr "magnesium silicate"
+
+#: config/render/meta_data_mapping.py:119
+msgid "marmerkleurig"
+msgstr "marble-colored"
+
+#: config/render/meta_data_mapping.py:120
+msgid "materiaal"
+msgstr "material"
+
+#: config/render/meta_data_mapping.py:121
+msgid "met"
+msgstr "with"
+
+#: config/render/meta_data_mapping.py:122
+msgid "mogelijk"
+msgstr "possibly"
+
+#: config/render/meta_data_mapping.py:123
+msgid "monohydraat"
+msgstr "monohydrate"
+
+#: config/render/meta_data_mapping.py:124
+msgid "naamloze"
+msgstr "nameless"
+
+#: config/render/meta_data_mapping.py:125
+msgid "napolitaanse"
+msgstr "napolitan"
+
+#: config/render/meta_data_mapping.py:126
+msgid "natriumbenzoaat"
+msgstr "sodium benzoate"
+
+#: config/render/meta_data_mapping.py:127
+msgid "natriumchloraat"
+msgstr "sodium chlorate"
+
+#: config/render/meta_data_mapping.py:128
+msgid "natriumnitraat"
+msgstr "sodium nitrate"
+
+#: config/render/meta_data_mapping.py:129
+msgid "niet"
+msgstr "not"
+
+#: config/render/meta_data_mapping.py:130
+msgid "nitraat"
+msgstr "nitrate"
+
+#: config/render/meta_data_mapping.py:131
+msgid "nitrocellulose"
+msgstr "nitrocellulose"
+
+#: config/render/meta_data_mapping.py:132
+#: config/render/meta_data_mapping.py:181
+msgid "of"
+msgstr "or"
+
+#: config/render/meta_data_mapping.py:133
+msgid "olie"
+msgstr "oil"
+
+#: config/render/meta_data_mapping.py:134
+msgid "onbekend"
+msgstr "unknown"
+
+#: config/render/meta_data_mapping.py:135
+msgid "ook"
+msgstr "too"
+
+#: config/render/meta_data_mapping.py:136
+msgid "op"
+msgstr "on"
+
+#: config/render/meta_data_mapping.py:137
+msgid "overige"
+msgstr "other"
+
+#: config/render/meta_data_mapping.py:138
+msgid "paars"
+msgstr "purple"
+
+#: config/render/meta_data_mapping.py:139
+msgid "papierachtig"
+msgstr "paperlike"
+
+#: config/render/meta_data_mapping.py:140
+msgid "pasta"
+msgstr "paste"
+
+#: config/render/meta_data_mapping.py:141
+msgid "pigment"
+msgstr "pigment"
+
+#: config/render/meta_data_mapping.py:142
+msgid "plak"
+msgstr "slab"
+
+#: config/render/meta_data_mapping.py:143
+msgid "poeder"
+msgstr "powder"
+
+#: config/render/meta_data_mapping.py:144
+msgid "polyethyleen"
+msgstr "polyethylene"
+
+#: config/render/meta_data_mapping.py:145
+msgid "polystyreen"
+msgstr "polystyrene"
+
+#: config/render/meta_data_mapping.py:146
+msgid "polyvinylchloride"
+msgstr "polyvinyl chloride"
+
+#: config/render/meta_data_mapping.py:147
+msgid "pools"
+msgstr "polish"
+
+#: config/render/meta_data_mapping.py:148
+msgid "poolse"
+msgstr "polish"
+
+#: config/render/meta_data_mapping.py:149
+msgid "pr4"
+msgstr "pr4"
+
+#: config/render/meta_data_mapping.py:150
+msgid "productiejaar"
+msgstr "production year"
+
+#: config/render/meta_data_mapping.py:151
+msgid "prop"
+msgstr "wad"
+
+#: config/render/meta_data_mapping.py:152
+msgid "pvc"
+msgstr "pvc"
+
+#: config/render/meta_data_mapping.py:153
+msgid "rode"
+msgstr "red"
+
+#: config/render/meta_data_mapping.py:154
+msgid "rood"
+msgstr "red"
+
+#: config/render/meta_data_mapping.py:155
+msgid "roodbruin"
+msgstr "reddish brown"
+
+#: config/render/meta_data_mapping.py:156
+msgid "roodbruine"
+msgstr "reddish brown"
+
+#: config/render/meta_data_mapping.py:157
+msgid "roodpigment"
+msgstr "red pigment"
+
+#: config/render/meta_data_mapping.py:158
+msgid "roze"
+msgstr "pink"
+
+#: config/render/meta_data_mapping.py:159
+msgid "samenstelling"
+msgstr "composition"
+
+#: config/render/meta_data_mapping.py:160
+msgid "schilfers"
+msgstr "flakes"
+
+#: config/render/meta_data_mapping.py:161
+msgid "siliciumdioxide"
+msgstr "silicon dioxide"
+
+#: config/render/meta_data_mapping.py:162
+msgid "siliciumoxide"
+msgstr "silicon oxide"
+
+#: config/render/meta_data_mapping.py:163
+msgid "snippers"
+msgstr "snippets"
+
+#: config/render/meta_data_mapping.py:164
+msgid "spikkels"
+msgstr "speckles"
+
+#: config/render/meta_data_mapping.py:165
+msgid "sporadisch"
+msgstr "sporadic"
+
+#: config/render/meta_data_mapping.py:166
+msgid "steenrood"
+msgstr "brick red"
+
+#: config/render/meta_data_mapping.py:167
+msgid "ster"
+msgstr "star"
+
+#: config/render/meta_data_mapping.py:168
+msgid "stijgtol"
+msgstr "aerial spinner"
+
+#: config/render/meta_data_mapping.py:169
+msgid "strontiumcarbonaat"
+msgstr "strontium carbonate"
+
+#: config/render/meta_data_mapping.py:170
+msgid "strontiumnitraat"
+msgstr "strontium nitrate"
+
+#: config/render/meta_data_mapping.py:171
+msgid "strontiumoxalaathydraat"
+msgstr "strontium oxalate hydrate"
+
+#: config/render/meta_data_mapping.py:172
+msgid "talen"
+msgstr "languages"
+
+#: config/render/meta_data_mapping.py:173
+msgid "tereftaalzuur"
+msgstr "terephthalic acid"
+
+#: config/render/meta_data_mapping.py:174
+msgid "tereftalaat"
+msgstr "terephthalate"
+
+#: config/render/meta_data_mapping.py:175
+msgid "tinten"
+msgstr "shades"
+
+#: config/render/meta_data_mapping.py:176
+msgid "titaan"
+msgstr "titanium"
+
+#: config/render/meta_data_mapping.py:177
+msgid "titaancarbide"
+msgstr "titanium carbide"
+
+#: config/render/meta_data_mapping.py:178
+msgid "titaniumdioxide"
+msgstr "titanium dioxide"
+
+#: config/render/meta_data_mapping.py:179
+msgid "titaniumverbinding"
+msgstr "titanium compound"
+
+#: config/render/meta_data_mapping.py:180
+msgid "uit"
+msgstr "from"
+
+#: config/render/meta_data_mapping.py:182
+msgid "vermoedelijk"
+msgstr "presumably"
+
+#: config/render/meta_data_mapping.py:183
+msgid "vinylacetaat"
+msgstr "vinyl acetate"
+
+#: config/render/meta_data_mapping.py:184
+msgid "visueel"
+msgstr "visual"
+
+#: config/render/meta_data_mapping.py:185
+msgid "vlokken"
+msgstr "flakes"
+
+#: config/render/meta_data_mapping.py:186
+msgid "vuurpijl"
+msgstr "rocket"
+
+#: config/render/meta_data_mapping.py:187
+msgid "was"
+msgstr "wax"
+
+#: config/render/meta_data_mapping.py:188
+msgid "wit"
+msgstr "white"
+
+#: config/render/meta_data_mapping.py:189
+msgid "witte"
+msgstr "white"
+
+#: config/render/meta_data_mapping.py:190
+msgid "zaagsel"
+msgstr "sawdust"
+
+#: config/render/meta_data_mapping.py:191
+msgid "zetmeel"
+msgstr "starch"
+
+#: config/render/meta_data_mapping.py:192
+msgid "zetmeelachtig"
+msgstr "starchy"
+
+#: config/render/meta_data_mapping.py:193
+msgid "zilvergrijze"
+msgstr "silver grey"
+
+#: config/render/meta_data_mapping.py:194
+msgid "zink"
+msgstr "zinc"
+
+#: config/render/meta_data_mapping.py:195
+msgid "zonder"
+msgstr "without"
+
+#: config/render/meta_data_mapping.py:196
+msgid "zwart"
+msgstr "black"
+
+#: config/render/meta_data_mapping.py:197
+msgid "zwarte"
+msgstr "black"
+
+#: config/render/meta_data_mapping.py:198
+msgid "zwavel"
+msgstr "sulfur"
+

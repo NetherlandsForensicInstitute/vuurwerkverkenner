@@ -1,5 +1,5 @@
 import uuid
-from typing import Any, Optional
+from typing import Any
 
 from flask import current_app
 
@@ -10,5 +10,5 @@ def add_to_cache(value: Any) -> str:
     return key
 
 
-def get_from_cache(key: str) -> Optional[Any]:
+def get_from_cache(key: str) -> Any:
     return current_app.cache.get(key, None)

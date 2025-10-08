@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block header %}
-    <h1>{% block title %}Resultaten{% endblock %}</h1>
+    <h1 id="results-header">{% block title %}{{ _('Resultaten') }}{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -18,34 +18,34 @@
         {{ pagination.info }}
         {% for result in results %}
             <div class="grey-wrapper">
-                {% if result.meta['n_items'] == 1 %}
-                    <img src="{{ url_for('results.show_image', filename=result.meta['wrapper_image']) }}"
-                         alt="Etiket"
-                         onclick="getItemData({{ result.label }}, {{ 0 }}, 'results')"
+                {% if result.meta['n_articles'] == 1 %}
+                    <img src="{{ url_for('results.show_image', filename=result.meta['image']) }}"
+                         alt="{{ _('Etiket') }}"
+                         onclick="getArticleData('{{ result.category }}', '{{ result.label }}', 'results')"
                          width="100%" height="auto">
                 {% else %}
-                    <img src="{{ url_for('results.show_image', filename=result.meta['wrapper_image']) }}"
-                         alt="Etiket"
-                         onclick="getGroupData('{{ result.label }}', '{{ 1 }}')"
+                    <img src="{{ url_for('results.show_image', filename=result.meta['image']) }}"
+                         alt="{{ _('Etiket') }}"
+                         onclick="getCategoryData('{{ result.category }}', '{{ 1 }}')"
                          width="100%" height="auto">
                 {% endif %}
-                {% if result.meta['n_items'] == 1 %}
-                    <div class="view-lower" onclick="getItemData({{ result.label }}, {{ 0 }}, 'results')">
+                {% if result.meta['n_articles'] == 1 %}
+                    <div class="view-lower" onclick="getArticleData('{{ result.category }}', '{{ result.label }}', 'results')">
                         {#  skip the item_group_view and go directly to viewing meta-info #}
                         <a class="results-headers">
                             {% if result.meta.article_name %}
-                                Bekijk {{ result.meta.article_name }}
+                            {{ _('Bekijk') }} {{ result.meta.article_name | translate_meta_data_values }}
                             {% else %}
-                                <span class="placeholder">Bekijk artikel</span>
+                                <span class="placeholder">{{ _('Bekijk artikel')}}</span>
                             {% endif %}
                         </a>
                         <a class="results-arrow"> > </a>
                     </div>
                 {% else %}
-                    <div class="view-lower" onclick="getGroupData('{{ result.label }}', '{{ 1 }}')">
+                    <div class="view-lower" onclick="getCategoryData('{{ result.category }}', '{{ 1 }}')">
                         <a class="results-headers">
-                            Bekijk categorie ({{ result.meta['n_items'] }}
-                            artikelen)
+                            {{ _('Bekijk categorie') }} ({{ result.meta['n_articles'] }}
+                            {{ _('artikelen') }})
                         </a>
                         <a class="results-arrow"> > </a>
                     </div>

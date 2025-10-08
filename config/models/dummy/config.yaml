@@ -1,9 +1,0 @@
-model:
-  name: 'dummy'
-  labels:    # These labels match the metadata in demo-data:
-    - '125'  # Cobra 6 en 11 (diversen)
-    - '168'  # Corona
-    - '170'  # Dumbum (diversen)
-    - '6'    # Thunderking
-    - '88'   # Tuono (diversen)
-    - '122'  # Big Boy (diversen)

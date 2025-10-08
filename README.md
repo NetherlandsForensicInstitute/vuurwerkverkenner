@@ -12,8 +12,9 @@ The intended use looks as follows:
 4. The application **shows the search results** in descending order of similarity (according to the AI model)
 5. The user compares the snippets and the shown wrappers to **establish a match**
 
-The application is developed and maintained by the Netherlands Forensic Institute (NFI).
-It is deployed on www.vuurwerkverkenner.nl.
+The application is developed and maintained by the Netherlands Forensic Institute (NFI) and is hosted at the following 
+domains: www.vuurwerkverkenner.nl, www.vuurwerkverkenner.com, www.vuurwerkverkenner.ai, 
+www.fireworksexplorer.eu, www.fireworksexplorer.com, www.fireworksexplorer.ai.
 
 ## Model and database
 The application relies on a **trained AI model** and a **background database** of fireworks, both maintained by the NFI.
@@ -21,25 +22,29 @@ They are both stored on the HuggingFace organization page of the NFI (see [here]
 * The model, as well as a description of how it was trained, can be found [here](https://huggingface.co/NetherlandsForensicInstitute/vuurwerkverkenner).
 * The background database can be found [here](https://huggingface.co/datasets/NetherlandsForensicInstitute/vuurwerkverkenner-data).
 
-If you want to run the application locally, download a copy of the model and database to your machine.
-
-## Getting started
+## Running the app locally
 The following describes how to run the application on your own machine. 
-It can be run with a **dummy** model and database (which are contained within this repository), or with a copy of the **real** model and database which are stored on HuggingFace.
+It can be run with the live model and database, which are stored on HuggingFace.
 
 ### Prerequisites
-* Python 3.8
+* Python 3.12
 * Any web browser
-* Optionally, a local copy of the model and data (see above)
+* An internet connection (required for downloading the data when running the application for the first time)
+
+#### Recommended:  
+* A Python virtual environment
+* A HuggingFace account + access token  
+  Set the token as an environment variable named `HF_TOKEN`  
+  NOTE: It is possible to download the data without this token, but you will likely have to restart the process
+  a few times for it to fully complete te download.
 
 ### Requirements
-All package requirements for running the application are specified in `requirements.txt`.
-Packages can be installed from PyPi, e.g. through `pip install -r requirements.txt`.
+All package requirements for running the application are specified in `pyproject.toml`. 
 
-### Configuration
-Make sure parameters in `app/setup.cfg` (in particular `MODEL_CONFIG_FILE` and `META_DATA_DIR`) match the desired configuration.
-* For running the application with a **dummy** model and database, uncomment the indicated lines.
-* For running the application with the **real** model and database, make sure that the paths point to the correct locations on your machine. Additionally, make sure that the filepath for the weights file (in the model configuration file) matches the filepath on your machine.
+### Model and data
+The model and data are downloaded from HuggingFace when running the app for the first time. These data are saved 
+to the paths `MODEL_DIR` and `META_DATA_DIR`,
+which are listed in `setup.cfg`.
 
 ### Running the application
 Simply run `flask run` inside a terminal.

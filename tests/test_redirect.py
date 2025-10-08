@@ -39,23 +39,6 @@ def test_http_exceptions(client):
         assert response.status_code == status
 
 
-def test_redirect_to_login(client_login):
-    assert_redirect_to_login(client_login, "")
-    assert_redirect_to_login(client_login, "/")
-    assert_redirect_to_login(client_login, "index")
-    assert_redirect_to_login(client_login, "results")
-    assert_redirect_to_login(client_login, "retrieve_results")
-    assert_redirect_to_login(client_login, "run_model")
-    assert_redirect_to_login(client_login, "about")
-    assert_redirect_to_login(client_login, "index/bla")
-    assert_redirect_to_login(client_login, "about/onzin/NogMeerOnzin")
-    assert_redirect_to_login(client_login, "results/1/2/3/4")
-    assert_redirect_to_login(client_login, "images/")
-    assert_redirect_to_login(client_login, "images/meta.json")
-    assert_redirect_to_login(client_login, "images/../bla.txt")
-    assert_redirect_to_login(client_login, "images/../bla.png")
-
-
 def assert_get_redirect_to_index(client, path):
     response = client.get(path, follow_redirects=True)
     assert_redirect_to_index(response)
@@ -66,15 +49,4 @@ def assert_redirect_to_index(response):
     assert response.status_code == 200
     assert len(response.history) == 1
 
-    assert_texts_in_response(response, [
-        "Vuurwerkverkenner", "Upload snipperfoto", "Voer tekst in", "Verken vuurwerk"
-    ])
-
-
-def assert_redirect_to_login(client, path):
-    response = client.get(path, follow_redirects=True)
-
-    assert response.request.path == '/login'
-    assert response.status_code == 200
-
-    assert_texts_in_response(response, "Wachtwoord")
+    assert_texts_in_response(response, ["Vuurwerkverkenner", "Upload snipperfoto", "Voer tekst in", "Verken vuurwerk"])

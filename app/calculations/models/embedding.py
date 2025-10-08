@@ -1,87 +1,82 @@
-from typing import Optional, Tuple
-
 import numpy as np
-import tensorflow as tf
-from PIL import Image
-from keras import layers
-from vit_keras import vit
+import torch
+import torch.nn.functional as F  # noqa: N812
+from pydantic import BaseModel
+from torch import nn
+from transformers import ViTImageProcessor, ViTModel
 
 from app.calculations.models.base import EmbeddingModel
-from app.calculations.models.utils import min_max_normalize, convert_PIL_image_to_numpy
+from app.calculations.models.utils import build_vit_configuration
 
 
-class EmbeddingViTModel(EmbeddingModel):
-    """
-    The class for an embedding model that is built on top of the Vision Transformer
-    with the option to load the model with pretrained weights.
-    """
+class ViTModelConfig(BaseModel):
+    model_size: str
+    patch_size: int
+    image_size: int
+    embedding_size: int
+    add_pooling_layer: bool
+    mean_pooling: bool
+    device: str
+    force_download: bool
 
-    def __init__(self,
-                 input_size: Tuple[int, int],
-                 embedding_size: int,
-                 weights_file: Optional[str] = None,
-                 backbone: str = "vit_b32"):
-        """
-        :param input_size: the size of the model's input layer
-        :param embedding_size: the size of the embedding layer (= model output)
-        :param weights_file: (optionally) the file path corresponding to the pretrained weights file
-            the model should be instantiated with
-        :param backbone: which backbone to use (either 'vit_b16', 'vit_b32' or 'vit_l32')
-        """
-        self._input_size = input_size
-        self._backbone = self._create_backbone(backbone)
-        self._embedding_size = embedding_size
-        self._model = self._build_model()
-        if weights_file:
-            self._load_weights(weights_file)
 
-    def predict(self, image: Image) -> np.ndarray:
-        # resize the PIL image to the right input size and convert to numpy array:
-        image = convert_PIL_image_to_numpy(image, resize=self._input_size)
-        # map the signal intensities to the [-1, 1] range by applying min-max normalization
-        image = min_max_normalize(image)
-        # compute and return the embedding for the normalized map
-        embedding = self._model.predict(image.reshape(1, *image.shape), verbose=0).reshape(self.embedding_size)
-        return embedding
+class ViTEmbeddingModel(EmbeddingModel):
+    def __init__(self, config: ViTModelConfig):
+        """Build a PyTorch embedding model with the Vision Transformer as backbone."""
+        super().__init__()
+        self.config = build_vit_configuration(
+            model_size=config.model_size,
+            patch_size=config.patch_size,
+            image_size=config.image_size,
+            embedding_size=config.embedding_size,
+            add_pooling_layer=config.add_pooling_layer,
+            mean_pooling=config.mean_pooling,
+            device=config.device,
+            force_download=config.force_download,
+        )
+        # build the pretrained modified encoder model
+        self.vit = (
+            ViTModel.from_pretrained(
+                pretrained_model_name_or_path=self.config.model_name,
+                config=self.config,
+                add_pooling_layer=self.config.add_pooling_layer,
+                ignore_mismatched_sizes=True,  # partially load the weights
+            )
+            if config.force_download
+            else ViTModel(config=self.config, add_pooling_layer=self.config.add_pooling_layer)
+        )
+        # attach embedding head
+        self.projector = nn.Linear(in_features=self.config.hidden_size, out_features=self.config.embedding_size)
+        # initialize weights
+        nn.init.xavier_uniform_(self.projector.weight)
+        # move the encoder model to cpu/gpu
+        self.to(self.config.device)
+        # build the preprocessor for this model
+        self.processor = (
+            ViTImageProcessor.from_pretrained(self.config.model_name) if config.force_download else ViTImageProcessor()
+        )
+        # update input size
+        self.processor.size = {'height': self.config.image_size, 'width': self.config.image_size}
+
+    def forward(self, images: np.ndarray | torch.Tensor) -> torch.Tensor:
+        """Forward pass."""
+        inputs = self.processor(images, return_tensors="pt").to(self.config.device)
+        outputs = self.vit(**inputs)
+        if self.config.add_pooling_layer:
+            # option 1: feed the (non-linear) pooler output to the linear layer
+            embedding = outputs.pooler_output
+        elif self.config.mean_pooling:
+            # option 2: apply mean pooling across the patch embeddings excluding the CLS token
+            embedding = outputs.last_hidden_state[:, 1:, :].mean(dim=1)
+        else:
+            # option 3: feed the raw CLS token to the linear layer
+            embedding = outputs.last_hidden_state[:, 0, :]  # get the CLS token
+        return F.normalize(self.projector(embedding), p=2, dim=1)  # apply L2 normalization after projection
+
+    @property
+    def input_size(self) -> int:
+        return self.config.image_size
 
     @property
     def embedding_size(self) -> int:
-        return self._embedding_size
-
-    def _create_backbone(self, backbone: str) -> tf.keras.Sequential:
-        if backbone == "vit_b16":
-            return vit.vit_b16(
-                image_size=self._input_size,
-                activation='sigmoid',
-                pretrained=False,
-                include_top=False,
-                pretrained_top=False,
-            )
-        elif backbone == "vit_b32":
-            return vit.vit_b32(
-                image_size=self._input_size,
-                activation='sigmoid',
-                pretrained=False,
-                include_top=False,
-                pretrained_top=False,
-            )
-        elif backbone == "vit_l32":
-            return vit.vit_l32(
-                image_size=self._input_size,
-                activation='sigmoid',
-                pretrained=False,
-                include_top=False,
-                pretrained_top=False,
-            )
-        else:
-            raise NotImplementedError
-
-    def _build_model(self) -> tf.keras.Sequential:
-        return tf.keras.Sequential([
-            self._backbone,
-            layers.Dense(self.embedding_size, activation=None),
-            layers.Lambda(lambda x: tf.math.l2_normalize(x, axis=1), name='embedding')
-        ])
-
-    def _load_weights(self, weights_file: str):
-        self._model.load_weights(weights_file)
+        return self.config.embedding_size

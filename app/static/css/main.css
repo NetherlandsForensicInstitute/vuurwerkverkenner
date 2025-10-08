@@ -150,18 +150,28 @@ form.form-signin {
 #clear-query {
     display: none;
     cursor: pointer;
+    width: 49%;
+}
+
+#change-search-text {
+    display: none;
+    cursor: pointer;
+    margin-left: 16px;
+    width: 49%;
 }
 
 #input-text-wrapper {
     margin: auto;
 }
 
-#image-selector-label {
+#image-selector-label, #image-selector-label-empty {
     font-family: RijksoverheidSansWebText;
     font-size: 14px;
     padding: 10px;
 }
 
+.text-filter-info,
+.text-filter-digits-info,
 .image-selector-info,
 .text-selector-info {
     width: 20px;
@@ -170,6 +180,19 @@ form.form-signin {
     margin-top: 5px;
 }
 
+#text-filter-option1,
+#text-filter-option2{
+    display: flex;
+    position: relative;
+}
+
+.text-filter-info,
+.text-filter-digits-info {
+    position: absolute;
+    right: 10px;
+}
+
+
 .selector-info-wrapper {
     width: 30px;
     height: 30px;
@@ -177,6 +200,7 @@ form.form-signin {
 }
 
 #char-counter-text-input {
+    float: right;
     text-align: right;
     font-size: 12px;
     font-family: RijksoverheidSansWebText;
@@ -248,6 +272,10 @@ form.form-signin {
     cursor: pointer;
 }
 
+.clickable-button {
+    cursor: pointer;
+}
+
 #image-selector-icon {
     width: 45px;
     height: 45px;
@@ -270,4 +298,74 @@ form.form-signin {
 
 .clickable {
     cursor: pointer;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px; /* Adds space between checkbox and text */
+    white-space: nowrap; /* Prevents text wrapping */
+    color: black;
+    font-size: 15px;
+    font-family: RijksoverheidSansWebText;
+    font-weight: normal;
+    line-height: 23px;
+    word-wrap: break-word;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5); /* Increase size by 50% */
+    margin-right: 8px; /* Optional spacing */
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion-index-page {
+    font-size: 15px;
+    font-family: RijksoverheidSansWebText;
+    background-color: #e6e6e6;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion-index-page {
+    background-color: #cccccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    border: 1px dashed #007BC7;
+}
+
+.accordion-index-page img {
+    max-width: 24px;
+    max-height: 16px;
+    vertical-align: top; /* optional, keeps it aligned with text */
+    float: right;
+}
+
+.down,
+.up {
+    display: none;
+}
+
+.accordion-index-page .down {
+    display: inline;
+}
+
+.accordion-index-page.active .down {
+    display: none;
+}
+
+.accordion-index-page.active .up {
+    display: inline;
 }

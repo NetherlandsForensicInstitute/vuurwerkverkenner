@@ -1,17 +1,21 @@
 const Modes = Object.freeze({
     INPUT: "input",
-    VIEW_RESULTS: "view-all-results",
-    VIEW_GROUP: "view-result-group",
-    VIEW_ITEM: "view-result-item"
+    VIEW_RESULTS: "view-results",
+    VIEW_CATEGORY: "view-category",
+    VIEW_ARTICLE: "view-article"
 });
 
-var mode = Modes.INPUT;
+let mode = Modes.INPUT;
 
 // Some browsers keep user input, even when location.reload is triggered
 function resetInputsAndNavigateHome() {
     resetImageInput();
     resetTextInput();
     location.reload();
+}
+
+function editCurrentQuery() {
+    switchMode("input");
 }
 
 function showPage(pageId) {
@@ -54,10 +58,10 @@ function getResultsElement() {
     switch (mode) {
         case Modes.VIEW_RESULTS:
             return document.getElementById("results");
-        case Modes.VIEW_GROUP:
-            return document.getElementById("result-group");
+        case Modes.VIEW_CATEGORY:
+            return document.getElementById("result-category");
         default:
-            return document.getElementById("result-item");
+            return document.getElementById("result-article");
     }
 }
 
@@ -70,35 +74,44 @@ function switchMode(newMode, optionalSource) {
     hide("text");
     hide("char-counter-text-input");
     hide("new-results-button");
+    hide("change-search-text");
 
     toggleSearchHeaders();
     toggleSearchInput();
 
-    displayInline("input-text-preview");
     displayBlock("clear-query");
+    displayBlock("change-search-text");
 
     showNavigation();
 
     switch (mode) {
+        case Modes.INPUT:
+            displayBlock("input-form");
+            displayFlex("image-selector-container");
+            displayInline("text");
+            displayInline("char-counter-text-input");
+            displayFlex("new-results-button");
+            hide("clear-query");
+            hide("change-search-text");
         case Modes.VIEW_RESULTS:
             displayBlock("results");
             displayInline("menu-navigate-home");
             displayInline("menu-results");
             break;
-        case Modes.VIEW_GROUP:
-            displayBlock("result-group");
+        case Modes.VIEW_CATEGORY:
+            displayBlock("result-category");
             displayInline("menu-navigate-home");
             displayInline("menu-navigate-results");
-            displayInline("menu-result-group");
+            displayInline("menu-result-category");
             break;
-        case Modes.VIEW_ITEM:
-            displayBlock("result-item");
+        case Modes.VIEW_ARTICLE:
+            displayBlock("result-article");
             displayInline("menu-navigate-home");
             displayInline("menu-navigate-results");
-            if (optionalSource === 'group') {
-                displayInline("menu-navigate-result-group");
+            if (optionalSource === 'category') {
+                displayInline("menu-navigate-result-category");
             }
-            displayInline("menu-result-item");
+            displayInline("menu-result-article");
             break;
     }
 }
@@ -125,4 +138,8 @@ function displayBlock(id) {
 
 function displayInline(id) {
     document.getElementById(id).style.display = "inline";
+}
+
+function displayFlex(id) {
+    document.getElementById(id).style.display = "flex";
 }

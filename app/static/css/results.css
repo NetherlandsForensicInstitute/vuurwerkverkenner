@@ -67,16 +67,52 @@ li {
 
 .accordion-meta-data {
     background-color: #F3F3F3;
-    padding-left: 5px;
-    padding-top: 5px;
     padding-bottom: 8px;
     border-radius: 5px;
     font-family: RijksoverheidSansWebText;
 }
 
+.secondary-button {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid #007BC7;
+    color: #007BC7;
+    font-size: 13px;
+    font-weight: bold;
+    height: 28px;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    webkit-align-items:center;
+    webkit-box-align:center;
+    ms-flex-align:center;
+    display:-webkit-inline-box;
+    display:-webkit-inline-flex;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    webkit-box-pack:center;
+    ms-flex-pack:center;
+    webkit-justify-content:center;
+    margin-top:6px;
+    padding:8px 7px;
+}
+
+.secondary-button-text {
+    text-align: center;
+    color: #007BC7;
+    font-size: 18px;
+    font-family: RijksoverheidSansWebText;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+
 .grey-wrapper-meta-data {
     background: #F3F3F3;
-    padding: 6px 16px;
     margin: 5px 5px 10px;
 }
 
@@ -113,8 +149,8 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #dfdbdb;
 }
-
 
 .meta-data-text {
     font-size: 12px;
@@ -136,6 +172,7 @@ li {
     font-size: 16px;
     cursor: pointer;
     font-weight: normal;
+    padding-left: 13px;
 }
 
 .results-arrow {
@@ -143,10 +180,13 @@ li {
     font-size: 20px;
     cursor: pointer;
     color: #007BC7;
+    padding-right: 6px;
 }
 
 .toggle-content {
     display: none;
+    padding-left: 10px;
+    padding: 6px;
 }
 
 .accordion-content {

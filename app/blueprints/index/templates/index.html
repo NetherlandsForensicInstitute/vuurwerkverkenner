@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Vuurwerkverkenner{% endblock %}
+{% block title %}{{ _('Vuurwerkverkenner') }}{% endblock %}
 
 {% block scripts %}
     <script>
@@ -12,127 +12,145 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'topbar.html' %}
+    {%  with languages=languages, current_language=current_language %}
+        {% include 'topbar.html' %}
+    {% endwith %}
     <div class="outer-container">
         <div class="content-container" id="main-page">
             <div class="grey-wrapper">
-                <div class="input-element clickable" id="image-selector-wrapper">
-                    <div class="header-container">
-                        <h1 class="input-element" id="photo-header">
-                            Upload snippers
-                        </h1>
-                        <div class="selector-info-wrapper clickable-info">
-                            <svg class="image-selector-info clickable-info" viewBox="0 0 64 64">
-                                <rect class="info-1 clickable-info" width="64" height="64"/>
-                                <path class="info-2 clickable-info"
-                                      d="m53.86,14.12c-.34-2.06-1.91-3.63-3.97-3.97-5.96-.99-15.9-.99-17.88-.99s-11.92,0-17.88.99c-2.06.34-3.63,1.91-3.97,3.97-.99,5.96-.99,15.9-.99,17.88s0,11.92.99,17.88c.34,2.06,1.91,3.63,3.97,3.97,5.96.99,15.9.99,17.88.99s11.92,0,17.88-.99c2.06-.34,3.63-1.91,3.97-3.97.99-5.96.99-15.9.99-17.88,0-5.96,0-11.92-.99-17.88Zm-18.86,33.88h-6.56l.56-14v-8h6v22Zm-2.98-26c-2.24,0-3.52-1.25-3.52-3.54,0-1.94,1.19-3.46,3.48-3.46s3.52,1.21,3.52,3.46c0,1.99-1.19,3.54-3.48,3.54Z"/>
-                            </svg>
+                <form action="javascript:onNewResultsButtonClicked();" id="input-form">
+                    <div class="input-element clickable" id="image-selector-wrapper">
+                        <div class="header-container">
+                            <h1 class="input-element" id="photo-header">
+                                {{ _('Upload snippers') }}
+                            </h1>
+                            <h1 class="input-element" id="photo-header-searched" style="display:none">
+                                {{ _('Geüploade foto') }}
+                            </h1>
+                            <div class="selector-info-wrapper clickable-info">
+                                <svg class="image-selector-info clickable-info" viewBox="0 0 64 64">
+                                    <rect class="info-1 clickable-info" width="64" height="64"/>
+                                    <path class="info-2 clickable-info"
+                                          d="m53.86,14.12c-.34-2.06-1.91-3.63-3.97-3.97-5.96-.99-15.9-.99-17.88-.99s-11.92,0-17.88.99c-2.06.34-3.63,1.91-3.97,3.97-.99,5.96-.99,15.9-.99,17.88s0,11.92.99,17.88c.34,2.06,1.91,3.63,3.97,3.97,5.96.99,15.9.99,17.88.99s11.92,0,17.88-.99c2.06-.34,3.63-1.91,3.97-3.97.99-5.96.99-15.9.99-17.88,0-5.96,0-11.92-.99-17.88Zm-18.86,33.88h-6.56l.56-14v-8h6v22Zm-2.98-26c-2.24,0-3.52-1.25-3.52-3.54,0-1.94,1.19-3.46,3.48-3.46s3.52,1.21,3.52,3.46c0,1.99-1.19,3.54-3.48,3.54Z"/>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
 
-                    <div id="preview-delete">
-                        <img id="preview" alt="Snipperfoto">
-                        <p id="photo-preview-text">Geen foto ingevoerd</p>
-                    </div>
+                        <div id="preview-delete">
+                            <img id="preview" alt="Snipperfoto">
+                            <p id="photo-preview-text">{{ _('Geen foto ingevoerd')}}</p>
+                        </div>
 
-                    <div id="image-selector-container">
-                        <input id="image-selector" type="file"
-                               name="image-selector"
-                               onchange="onImageChanged();"
-                               accept="{{ allowed_extensions|join(', ') }}, capture=environment"/>
-                        <svg id="image-selector-icon" viewBox="0 0 64 64">
-                            <rect class="info-1" width="64" height="64"/>
-                            <path class="info-2"
-                                  d="m53,17h-5.79c-.6-1.21-1.2-2.46-1.8-3.77-.66-1.44-1.95-2.55-3.38-2.73-1.42-.44-10.63-.44-12.05,0-1.43.17-2.73,1.28-3.38,2.73-.6,1.32-1.2,2.57-1.8,3.77h-4.79v-1c0-1.1-.9-2-2-2h-4c-1.1,0-2,.9-2,2v1h-1c-2.76,0-5,2.24-5,5v23c0,2.76,2.24,5,5,5h11.94c-2.1-2.75-3.35-6.18-3.35-9.91,0-.59.03-1.17.09-1.74.03-.31.28-.33.36-.28,0-.01,0-.03,0-.04.54,8.35,7.46,14.97,15.95,14.97s15.39-6.59,15.95-14.92c.13-.07.34,0,.37.28.06.57.09,1.15.09,1.73,0,3.73-1.26,7.15-3.35,9.91h3.94c2.76,0,5-2.24,5-5v-23c0-2.76-2.24-5-5-5m-17,32.1c-6.68,0-12.1-5.42-12.1-12.1s5.42-12.1,12.1-12.1,12.1,5.42,12.1,12.1-5.42,12.1-12.1,12.1m17-24.1h-5v-3h5v3Z"/>
-                        </svg>
-                        <span id="image-selector-label">Maak of selecteer foto</span>
-                    </div>
-                </div>
-                <div id="text-wrapper">
-                    <div class="header-container">
-                        <h1 class="input-element" id="text-header">
-                            Voer tekst in
-                        </h1>
-                        <div class="selector-info-wrapper" onclick="openModal('text-input-modal');">
-                            <svg class="text-selector-info" viewBox="0 0 64 64">
+                        <div id="image-selector-container">
+                            <input id="image-selector" type="file"
+                                   name="image-selector"
+                                   onchange="onImageChanged();"
+                                   accept="{{ allowed_extensions|join(', ') }}, capture=environment"/>
+                            <svg id="image-selector-icon" viewBox="0 0 64 64">
                                 <rect class="info-1" width="64" height="64"/>
                                 <path class="info-2"
-                                      d="m53.86,14.12c-.34-2.06-1.91-3.63-3.97-3.97-5.96-.99-15.9-.99-17.88-.99s-11.92,0-17.88.99c-2.06.34-3.63,1.91-3.97,3.97-.99,5.96-.99,15.9-.99,17.88s0,11.92.99,17.88c.34,2.06,1.91,3.63,3.97,3.97,5.96.99,15.9.99,17.88.99s11.92,0,17.88-.99c2.06-.34,3.63-1.91,3.97-3.97.99-5.96.99-15.9.99-17.88,0-5.96,0-11.92-.99-17.88Zm-18.86,33.88h-6.56l.56-14v-8h6v22Zm-2.98-26c-2.24,0-3.52-1.25-3.52-3.54,0-1.94,1.19-3.46,3.48-3.46s3.52,1.21,3.52,3.46c0,1.99-1.19,3.54-3.48,3.54Z"/>
+                                      d="m53,17h-5.79c-.6-1.21-1.2-2.46-1.8-3.77-.66-1.44-1.95-2.55-3.38-2.73-1.42-.44-10.63-.44-12.05,0-1.43.17-2.73,1.28-3.38,2.73-.6,1.32-1.2,2.57-1.8,3.77h-4.79v-1c0-1.1-.9-2-2-2h-4c-1.1,0-2,.9-2,2v1h-1c-2.76,0-5,2.24-5,5v23c0,2.76,2.24,5,5,5h11.94c-2.1-2.75-3.35-6.18-3.35-9.91,0-.59.03-1.17.09-1.74.03-.31.28-.33.36-.28,0-.01,0-.03,0-.04.54,8.35,7.46,14.97,15.95,14.97s15.39-6.59,15.95-14.92c.13-.07.34,0,.37.28.06.57.09,1.15.09,1.73,0,3.73-1.26,7.15-3.35,9.91h3.94c2.76,0,5-2.24,5-5v-23c0-2.76-2.24-5-5-5m-17,32.1c-6.68,0-12.1-5.42-12.1-12.1s5.42-12.1,12.1-12.1,12.1,5.42,12.1,12.1-5.42,12.1-12.1,12.1m17-24.1h-5v-3h5v3Z"/>
                             </svg>
+                            <span id="image-selector-label" style="display:none"></span>
+                            <span id="image-selector-label-empty">
+                                    {{ _('Maak of selecteer foto')}}
+                            </span>
                         </div>
                     </div>
-                    <div class="input-element" id="input-text-wrapper">
-                        <input id="text" type="text" name="text"
-                               placeholder="Tekst op de snippers, met spaties ertussen"
-                               oninput="printInputLength();"
-                               maxlength="{{ max_chars_text_filter }}">
+                    <div id="text-wrapper">
+                        <div class="header-container">
+                            <h1 class="input-element" id="text-header">
+                                {{ _('Voer tekst in')}}
+                            </h1>
+                            <h1 class="input-element" id="text-header-searched" style="display:none">
+                                    {{ _('Ingevoerde tekst') }}
+                            </h1>
+                            <div class="selector-info-wrapper" onclick="openModal('text-input-modal');">
+                                <svg class="text-selector-info" viewBox="0 0 64 64">
+                                    <rect class="info-1" width="64" height="64"/>
+                                    <path class="info-2"
+                                          d="m53.86,14.12c-.34-2.06-1.91-3.63-3.97-3.97-5.96-.99-15.9-.99-17.88-.99s-11.92,0-17.88.99c-2.06.34-3.63,1.91-3.97,3.97-.99,5.96-.99,15.9-.99,17.88s0,11.92.99,17.88c.34,2.06,1.91,3.63,3.97,3.97,5.96.99,15.9.99,17.88.99s11.92,0,17.88-.99c2.06-.34,3.63-1.91,3.97-3.97.99-5.96.99-15.9.99-17.88,0-5.96,0-11.92-.99-17.88Zm-18.86,33.88h-6.56l.56-14v-8h6v22Zm-2.98-26c-2.24,0-3.52-1.25-3.52-3.54,0-1.94,1.19-3.46,3.48-3.46s3.52,1.21,3.52,3.46c0,1.99-1.19,3.54-3.48,3.54Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="input-element" id="input-text-wrapper">
+                            <input id="text" type="text" name="text"
+                                   placeholder="{{ _('Tekst op de snippers, met spaties ertussen')}}"
+                                   oninput="onInputChange();"
+                                   maxlength="{{ max_chars_text_filter }}">
+                        </div>
+                        <p id="input-text-preview" style="display:none"></p>
+                        <p id="input-text-preview-empty" style="display:none">{{ _("Geen tekst ingevoerd") }}</p>
+                        <div id="char-counter-text-input"></div>
                     </div>
-                    <p id="input-text-preview" style="display:none"></p>
-                    <div id="char-counter-text-input"></div>
-                </div>
-                <div class="input-element" id="submit-buttons">
-                    <button class="input-element" id="new-results-button"
-                            onclick="onNewResultsButtonClicked();">
-                        <svg width="25" height="20" viewBox="0 -2 25 20">
-                            <path d="M17.16 14.8079L13.3792 11.0288C13.8258 10.2 14.059 9.27311 14.0579 8.33168C14.0579 5.18543 11.4975 2.62543 8.35 2.62543C5.2025 2.62543 2.64166 5.18543 2.64166 8.33168C2.64166 11.4813 5.20208 14.0413 8.34958 14.0413C9.31166 14.0413 10.2179 13.8004 11.0142 13.3788L14.8017 17.1663C15.3942 17.7588 16.3592 17.7588 16.9517 17.1663L17.16 16.9579C17.445 16.6727 17.605 16.2861 17.605 15.8829C17.605 15.4798 17.445 15.0931 17.16 14.8079ZM4.89083 8.33168C4.89083 6.42418 6.44041 4.87459 8.34958 4.87459C10.2587 4.87459 11.8083 6.42418 11.8083 8.33168C11.8083 10.2425 10.2587 11.7921 8.34958 11.7921C6.44041 11.7921 4.89083 10.2425 4.89083 8.33168Z"
-                                  fill="white"/>
-                        </svg>
-                        <span class="button-text">Verken vuurwerk</span>
-                        <button id="clear-query" onclick="resetInputsAndNavigateHome();">
-                            <span class="button-text">Zoek opnieuw</span>
+                    <div class="input-options" id="check-boxes">
+                        <button class="accordion-index-page">{{ _('Tekstfilteropties') }}
+                            <img src="{{ url_for('static', filename='icons/caret-down-grey-down.png') }}" class="icon down" alt="expand">
+                            <img src="{{ url_for('static', filename='icons/caret-down-grey-up.png') }}" class="icon up" alt="collapse">
                         </button>
-                    </button>
-                </div>
+                        <div class="panel">
+                            <div id="text-filter-option1">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="use-text-filter" name="use-text-filter" value="true" onclick="checkBoxClicked();" checked>
+                            {{ _('Tekstfilter inschakelen') }}
+                        </label><br>                            <div class="selector-info-wrapper" onclick="openModal('text-filter-info-modal');">
+                                <svg class="text-filter-info" viewBox="0 0 64 64">
+                                    <rect class="info-1" width="64" height="64"/>
+                                    <path class="info-2"
+                                          d="m53.86,14.12c-.34-2.06-1.91-3.63-3.97-3.97-5.96-.99-15.9-.99-17.88-.99s-11.92,0-17.88.99c-2.06.34-3.63,1.91-3.97,3.97-.99,5.96-.99,15.9-.99,17.88s0,11.92.99,17.88c.34,2.06,1.91,3.63,3.97,3.97,5.96.99,15.9.99,17.88.99s11.92,0,17.88-.99c2.06-.34,3.63-1.91,3.97-3.97.99-5.96.99-15.9.99-17.88,0-5.96,0-11.92-.99-17.88Zm-18.86,33.88h-6.56l.56-14v-8h6v22Zm-2.98-26c-2.24,0-3.52-1.25-3.52-3.54,0-1.94,1.19-3.46,3.48-3.46s3.52,1.21,3.52,3.46c0,1.99-1.19,3.54-3.48,3.54Z"/>
+                                </svg>
+                            </div></div>
+                            <div id="text-filter-option2">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="include-digits" name="keep-numbers" value="true" onclick="checkBoxClicked();">
+                            {{ _('Cijfers in Zoeken opnemen') }}
+                        </label>
+                                <div class="selector-info-wrapper" onclick="openModal('text-filter-digits-info-modal');">
+                                <svg class="text-filter-digits-info" viewBox="0 0 64 64">
+                                    <rect class="info-1" width="64" height="64"/>
+                                    <path class="info-2"
+                                          d="m53.86,14.12c-.34-2.06-1.91-3.63-3.97-3.97-5.96-.99-15.9-.99-17.88-.99s-11.92,0-17.88.99c-2.06.34-3.63,1.91-3.97,3.97-.99,5.96-.99,15.9-.99,17.88s0,11.92.99,17.88c.34,2.06,1.91,3.63,3.97,3.97,5.96.99,15.9.99,17.88.99s11.92,0,17.88-.99c2.06-.34,3.63-1.91,3.97-3.97.99-5.96.99-15.9.99-17.88,0-5.96,0-11.92-.99-17.88Zm-18.86,33.88h-6.56l.56-14v-8h6v22Zm-2.98-26c-2.24,0-3.52-1.25-3.52-3.54,0-1.94,1.19-3.46,3.48-3.46s3.52,1.21,3.52,3.46c0,1.99-1.19,3.54-3.48,3.54Z"/>
+                                </svg>
+                            </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="input-element" id="submit-buttons">
+                        <button class="input-element" id="new-results-button"
+                                onclick="onNewResultsButtonClicked();">
+                            <svg width="25" height="20" viewBox="0 -2 25 20">
+                                <path d="M17.16 14.8079L13.3792 11.0288C13.8258 10.2 14.059 9.27311 14.0579 8.33168C14.0579 5.18543 11.4975 2.62543 8.35 2.62543C5.2025 2.62543 2.64166 5.18543 2.64166 8.33168C2.64166 11.4813 5.20208 14.0413 8.34958 14.0413C9.31166 14.0413 10.2179 13.8004 11.0142 13.3788L14.8017 17.1663C15.3942 17.7588 16.3592 17.7588 16.9517 17.1663L17.16 16.9579C17.445 16.6727 17.605 16.2861 17.605 15.8829C17.605 15.4798 17.445 15.0931 17.16 14.8079ZM4.89083 8.33168C4.89083 6.42418 6.44041 4.87459 8.34958 4.87459C10.2587 4.87459 11.8083 6.42418 11.8083 8.33168C11.8083 10.2425 10.2587 11.7921 8.34958 11.7921C6.44041 11.7921 4.89083 10.2425 4.89083 8.33168Z"
+                                      fill="white"/>
+                            </svg>
+                            <span class="button-text">{{ _('Verken vuurwerk')}}</span>
+                        </button>
+                            <button class="input-element" id="clear-query" onclick="resetInputsAndNavigateHome();">
+                                <svg width="25" height="20" viewBox="0 -2 25 20">
+                                    <path d="M17.16 14.8079L13.3792 11.0288C13.8258 10.2 14.059 9.27311 14.0579 8.33168C14.0579 5.18543 11.4975 2.62543 8.35 2.62543C5.2025 2.62543 2.64166 5.18543 2.64166 8.33168C2.64166 11.4813 5.20208 14.0413 8.34958 14.0413C9.31166 14.0413 10.2179 13.8004 11.0142 13.3788L14.8017 17.1663C15.3942 17.7588 16.3592 17.7588 16.9517 17.1663L17.16 16.9579C17.445 16.6727 17.605 16.2861 17.605 15.8829C17.605 15.4798 17.445 15.0931 17.16 14.8079ZM4.89083 8.33168C4.89083 6.42418 6.44041 4.87459 8.34958 4.87459C10.2587 4.87459 11.8083 6.42418 11.8083 8.33168C11.8083 10.2425 10.2587 11.7921 8.34958 11.7921C6.44041 11.7921 4.89083 10.2425 4.89083 8.33168Z"
+                                          fill="white"/>
+                                </svg>
+                                <span class="button-text">{{ _('Zoek nieuw vuurwerk')}}</span>
+                            </button>
+                            <button class="input-element" id="change-search-text"
+                                    onclick="editCurrentQuery();">
+                                <span class="button-text">{{ _('Pas zoekopdracht aan')}}</span>
+                            </button>
+                        </button>
+                    </div>
+                </form>
             </div>
             <div class="results-container" id="results"></div>
-            <div class="results-container" id="result-group"></div>
-            <div class="results-container" id="result-item"></div>
+            <div class="results-container" id="result-category"></div>
+            <div class="results-container" id="result-article"></div>
         </div>
         <div class="content-container" id="help-page" style="display:none"></div>
         <div class="disclaimer-container"
              onclick="openModal('disclaimer-modal');">
-            <a>Disclaimer</a>
+            <a>{{ _('Disclaimer') }}</a>
         </div>
     </div>
-    <div id="image-selector-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('image-selector-modal');">&times;</span>
-            <p>
-                <b>Upload snipperfoto</b><br>
-                Klik op de camera om een foto te uploaden. Upload een foto van alle snippers met een (stukje) etiket.
-                Fotografeer de snippers recht van boven, op een effen, lichte achtergrond.
-                Gebruik hiervoor bijvoorbeeld een wit papier of een DNA-deken. Zorg ook voor een goede belichting.
-                Let erop dat er naast de snippers geen andere voorwerpen op de foto staan (dus ook geen liniaal).
-            </p>
-        </div>
-    </div>
-    <div id="text-input-modal" class="modal">
-        <div class="modal-content">
-            <span class="close"
-                  onclick="closeModal('text-input-modal');">&times;</span>
-            <p>
-                <b>Voer tekst in</b><br>
-                Voer hier de leesbare tekst op de snippers in. Dit mogen ook (meerdere) delen van woorden zijn.
-                Zorg dat de losse tekstfragmenten met spaties van elkaar gescheiden zijn.
-                Het tekstfilter is niet hoofdlettergevoelig en gebruikt alleen het Latijns alfabet om mee te zoeken.
-                Cijfers worden niet meegenomen en hoeven niet ingevoerd te worden.
-            </p>
-        </div>
-    </div>
-    <div id="disclaimer-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('disclaimer-modal');">&times;</span>
-            <p>
-                <b>Disclaimer</b><br>
-                Deze website is ontwikkeld door het Nederlands Forensisch Instituut (NFI) en is een hulpmiddel
-                om een indicatie te krijgen van welk professioneel vuurwerkartikel ontploft is,
-                welke onderdelen dit vuurwerk bevat en hoe gevaarlijk de explosie van dit vuurwerkartikel is.
-                Gevonden vuurwerkartikelen kunnen fout zijn. Resultaten dienen niet beschouwd te worden als NFI-rapport
-                of deskundigenoordeel en zijn niet als zodanig bruikbaar in de rechtsgang.
-                Gebruik van de resultaten en overige informatie op deze website is geheel op eigen risico.
-                Het NFI is op geen enkele wijze aansprakelijk voor geleden schade of letsel door het gebruik
-                van deze website.
-            </p>
-        </div>
-    </div>
+
+{% endblock %}
+{% block modals %}
+    {% include 'modals.html' %}
 {% endblock %}

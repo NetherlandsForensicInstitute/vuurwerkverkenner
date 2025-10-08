@@ -16,6 +16,7 @@
 }
 
 #navigation-container {
+    position: relative;
     background: #42145F;
     width: 100%;
     padding-top: 16px;
@@ -42,16 +43,82 @@
     display: none;
 }
 
-.help-button {
+#navigation-title .button-menu {
+    display: inline;
+    position: absolute;
+    right: 20px;
+    bottom: 3px;
+}
+
+#navigation-results .button-menu {
     float: right;
-    margin: 3px 30px 0 0;
-    width: 24px;
-    height: 24px;
+    padding-right: 20px;
+}
+
+.language-menu-drowdown {
+    position: relative;
+    display: inline-block;
+}
+
+.language-menu-button {
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
     cursor: pointer;
 }
 
-#help-button-menu {
-    margin: -45px 30px 0 0;
+.language-menu-button img {
+    height: 22px;
+    width: 15px;
+    padding-left: 2px;
+}
+
+.language-menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.language-menu-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.language-menu-drowdown:hover .language-menu-content {
+    display: block;
+}
+
+.language-menu-drowdown:hover .language-menu-button {
+    background-color: #2f034b;
+}
+
+.language-menu-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.help-button {
+    position: relative;
+    padding: 3px 5px 2px;
+    cursor: pointer;
+}
+
+.help-button svg {
+    position: relative;
+    bottom: -2px;
+}
+
+.help-button:hover {
+    background-color: #2f034b;
 }
 
 .menu-item {
@@ -68,12 +135,12 @@
 
 #menu-navigate-home,
 #menu-navigate-results,
-#menu-navigate-result-group {
+#menu-navigate-result-category {
     cursor:pointer;
 }
 
 #menu-results,
-#menu-result-group,
-#menu-result-item {
+#menu-result-category,
+#menu-result-article {
     font-family: RijksoverheidSansWebTextBold;
 }

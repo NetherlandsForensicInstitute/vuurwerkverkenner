@@ -14,39 +14,34 @@
                 </svg>
             </div>
         </div>
+
         <div id="navigation-container">
             <div class="navigation" id="navigation-title">
-                <span onclick="showPage('main-page')">Vuurwerkverkenner</span>
-                <a class="help-button" onclick="loadHelp()">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fill="white"
-                              d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12C1.5 17.8 6.2 22.5 12 22.5C17.8 22.5 22.5 17.8 22.5 12C22.5 6.2 17.8 1.5 12 1.5ZM11.5 19.1C10.5 19.1 9.9 18.5 9.9 17.5C9.9 16.6 10.4 15.8 11.4 15.8C12.4 15.8 13 16.4 13 17.5C13.1 18.4 12.5 19.1 11.5 19.1ZM13.9 11.9L12.9 12.5C12.3 12.8 12.1 13.2 12.1 13.7C12.1 14.1 12.2 14.4 12.4 14.9L10.5 15C10.1 14.6 9.9 14.1 9.9 13.4C9.9 12.5 10.3 11.8 11.4 11.1L12.5 10.5C13.3 10 13.6 9.6 13.6 8.9C13.6 8.2 13 7.7 11.7 7.7C10.8 7.7 9.9 7.9 8.9 8.3V6.3C10 5.8 11 5.6 12.3 5.6C14.6 5.6 16.1 6.8 16.1 8.6C16.1 10.2 15.5 11.1 13.9 11.9Z"/>
-                    </svg>
-                </a>
+                <span onclick="showPage('main-page')">{{ _('Vuurwerkverkenner') }}</span>
+
+                {% include 'menu-buttons.html' %}
             </div>
+
             <div class="navigation" id="navigation-help">
-                <span onclick="showPage('main-page')">< Vuurwerkverkenner</span>
+                <span onclick="showPage('main-page')">< {{ _('Vuurwerkverkenner') }}</span>
             </div>
+
             <div class="navigation" id="navigation-results">
                 <div class="menu">
                     <span class="menu-item" id="menu-navigate-home"
-                          onclick="resetInputsAndNavigateHome();"> Home > </span>
+                          onclick="resetInputsAndNavigateHome();"> {{ _('Home') }} > </span>
                     <span class="menu-item" id="menu-navigate-results"
-                          onclick="switchMode('view-all-results')"> Zoekresultaten > </span>
-                    <span class="menu-item" id="menu-navigate-result-group"
-                          onclick="switchMode('view-result-group')"> Categorie > </span>
+                          onclick="switchMode('view-results')"> {{ _('Zoekresultaten') }} > </span>
+                    <span class="menu-item" id="menu-navigate-result-category"
+                          onclick="switchMode('view-category')"> {{ _('Categorie') }} > </span>
+
+                {% include 'menu-buttons.html' %}
                 </div>
                 <div class="menu">
-                    <span class="menu-item" id="menu-results">Zoekresultaten</span>
-                    <span class="menu-item" id="menu-result-group">Categorie</span>
-                    <span class="menu-item" id="menu-result-item">Artikel</span>
+                    <span class="menu-item" id="menu-results">{{ _('Zoekresultaten') }}</span>
+                    <span class="menu-item" id="menu-result-category">{{ _('Categorie') }}</span>
+                    <span class="menu-item" id="menu-result-article">{{ _('Artikel') }}</span>
                 </div>
-                <a class="help-button" id="help-button-menu" onclick="loadHelp()">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fill="white"
-                              d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12C1.5 17.8 6.2 22.5 12 22.5C17.8 22.5 22.5 17.8 22.5 12C22.5 6.2 17.8 1.5 12 1.5ZM11.5 19.1C10.5 19.1 9.9 18.5 9.9 17.5C9.9 16.6 10.4 15.8 11.4 15.8C12.4 15.8 13 16.4 13 17.5C13.1 18.4 12.5 19.1 11.5 19.1ZM13.9 11.9L12.9 12.5C12.3 12.8 12.1 13.2 12.1 13.7C12.1 14.1 12.2 14.4 12.4 14.9L10.5 15C10.1 14.6 9.9 14.1 9.9 13.4C9.9 12.5 10.3 11.8 11.4 11.1L12.5 10.5C13.3 10 13.6 9.6 13.6 8.9C13.6 8.2 13 7.7 11.7 7.7C10.8 7.7 9.9 7.9 8.9 8.3V6.3C10 5.8 11 5.6 12.3 5.6C14.6 5.6 16.1 6.8 16.1 8.6C16.1 10.2 15.5 11.1 13.9 11.9Z"/>
-                    </svg>
-                </a>
             </div>
         </div>
     </div>

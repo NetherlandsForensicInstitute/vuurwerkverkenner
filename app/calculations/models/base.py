@@ -1,8 +1,9 @@
-from abc import abstractmethod, ABC
-from typing import Mapping, Set
+import os
+from abc import ABC, abstractmethod
+from collections.abc import Mapping
 
 import numpy as np
-from PIL import Image
+import torch
 
 
 class ClassificationModel(ABC):
@@ -11,34 +12,33 @@ class ClassificationModel(ABC):
     """
 
     @abstractmethod
-    def predict(self, image: Image) -> Mapping[str, float]:
+    def predict(self, image: np.ndarray) -> Mapping[str, float]:
         """
-        Make predictions for a single image instance
+        Make predictions for a single image instance.
 
-        :param image: The instance to make predictions for
+        :param image: The instance to make predictions for as a numpy array
         :returns: The model prediction which is a mapping between labels and scores
         """
         raise NotImplementedError
 
-    @property
+
+class EmbeddingModel(ABC, torch.nn.Module):
     @abstractmethod
-    def labels(self) -> Set[str]:
+    def forward(self, images: torch.Tensor) -> torch.Tensor:
+        """Implement the forward pass of the model."""
         raise NotImplementedError
 
+    def load(self, path: str, device: str = 'cpu'):
+        """Load the model weights from the given path."""
+        if not os.path.exists(path):
+            raise ValueError(f"Path {path} does not exist")
 
-class EmbeddingModel(ABC):
-    """
-    Abstract base class that specifies the interface all embedding models must adhere to.
-    """
+        self.load_state_dict(torch.load(path, map_location=torch.device(device), weights_only=True))
+        print(f"Model weights successfully loaded from {path}")
 
+    @property
     @abstractmethod
-    def predict(self, image: Image) -> np.ndarray:
-        """
-        Compute an embedding vector for a single image instance
-
-        :param image: The instance to create the embedding for
-        :returns: A numpy array containing the embedding vector
-        """
+    def input_size(self) -> int:
         raise NotImplementedError
 
     @property

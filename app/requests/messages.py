@@ -1,17 +1,19 @@
-MISSING_FORM_DATA = "Formvelden ontbreken"
-MISSING_IMAGE_FILE = "Foto ontbreekt"
-MISSING_QUERY_DATA = "Geen foto of tekst ingevoerd"
-MISSING_PAGE_NUMBER = "Paginanummer ontbreekt"
-WRONG_FORMAT_PAGE_NUMBER = "Paginanummer is geen getal"
-MISSING_RESULTS_ID = "ID van resultaten ontbreekt"
-MISSING_CATEGORY_ID = "Categorie ontbreekt"
-WRONG_CATEGORY_ID = "Categorie bestaat niet"
-MISSING_ITEM_ID = "Item ontbreekt"
-WRONG_ITEM_ID = "Item bestaat niet"
-EMPTY_FILE = "Leeg bestand"
-INVALID_FILE_FORMAT = "Bestandsformaat is ongeldig"
-FILE_READ_FAILURE = "Bestand inlezen niet gelukt"
-RESULTS_NOT_AVAILABLE = "Resultaten niet (meer) beschikbaar, verken opnieuw"
-RESULTS_NOT_AVAILABLE_FOR_PAGE = "Geen resultaten beschikbaar voor dit paginanummer"
-NO_MATCH_FOUND = "Geen resultaten gevonden in de database. Klopt de ingevoerde tekst?"
-TOO_MANY_CHARACTERS = "Teveel tekens in ingevoerde tekst"
+from flask_babel import lazy_gettext
+
+MISSING_FORM_DATA = lazy_gettext("Formvelden ontbreken")
+MISSING_IMAGE_FILE = lazy_gettext("Foto ontbreekt")
+MISSING_QUERY_DATA = lazy_gettext("Geen foto of tekst ingevoerd")
+MISSING_PAGE_NUMBER = lazy_gettext("Paginanummer ontbreekt")
+WRONG_FORMAT_PAGE_NUMBER = lazy_gettext("Paginanummer is geen getal")
+MISSING_RESULTS_ID = lazy_gettext("ID van resultaten ontbreekt")
+MISSING_CATEGORY = lazy_gettext("Categorie ontbreekt")
+WRONG_CATEGORY = lazy_gettext("Categorie bestaat niet")
+MISSING_LABEL = lazy_gettext("Label ontbreekt")
+WRONG_LABEL = lazy_gettext("Label bestaat niet")
+EMPTY_FILE = lazy_gettext("Leeg bestand")
+INVALID_FILE_FORMAT = lazy_gettext("Bestandsformaat is ongeldig")
+FILE_READ_FAILURE = lazy_gettext("Bestand inlezen niet gelukt")
+RESULTS_NOT_AVAILABLE = lazy_gettext("Resultaten niet (meer) beschikbaar, verken opnieuw")
+RESULTS_NOT_AVAILABLE_FOR_PAGE = lazy_gettext("Geen resultaten beschikbaar voor dit paginanummer")
+NO_MATCH_FOUND = lazy_gettext("Geen resultaten gevonden in de database. Klopt de ingevoerde tekst?")
+TOO_MANY_CHARACTERS = lazy_gettext("Teveel tekens in ingevoerde tekst")

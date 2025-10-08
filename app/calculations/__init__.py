@@ -1,3 +1,3 @@
-from app.calculations.core import get_results
+from app.calculations.core import get_search_results
 
-__all__ = ('get_results', )
+__all__ = ('get_search_results',)

@@ -1,0 +1,26 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: ruff
+        name: ruff
+        entry: ruff check
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+    -   id: ruff-format
+        name: ruff-format
+        entry: ruff format --check
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+    -   id: pdm-lock-check
+        name: pdm-lock-check
+        description: run pdm lock --check to validate config
+        entry: pdm lock --check
+        language: system
+        pass_filenames: false
+        always_run: true
+        files: ^pyproject.toml$
+        stages: [pre-push]
