@@ -1,6 +1,6 @@
 [project]
 name = "vuurwerkverkenner-app"
-version = "2.0.0"
+version = "2.0.1"
 description = """Frontend application for the vuurwerkverkenner to classify which firework wrapper matches best with
  an uploaded firework snippet"""
 authors = [
@@ -124,5 +124,4 @@ include_packages = ['torch']
 
 [[tool.pdm.source]]
 name = "pypi"
-url = "https://repo.nfi.minjus.nl/repository/pip-group/simple"
 exclude_packages = ['torch']
